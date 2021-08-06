@@ -65,3 +65,10 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+./idea/*
+/src/.sonarscanner/*
+.idea/vcs.xml
+.idea/rails-batch-638-proyecto-patrimonio-cultural.iml
+.idea/modules/src.iml
+.idea/modules.xml
+.idea/misc.xml
