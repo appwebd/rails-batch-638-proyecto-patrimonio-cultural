@@ -12,8 +12,8 @@ Este proyecto de bootcamp, se ha dividido en las siguientes etapas, que pueden u
 -------------------
 
 ```
-estrategia/    Contiene los elementos de estrategia desarrollados 
-postgresql/    Contiene el modelo de base de datos desarrollado, como también el script SQL
-src/           Código fuente de la aplicación Ruby on Rails
-tecnologia/    Contiene la descripción de los elementos de infraestructura técnica (Hardware / software de servidores)
+estrategia/     Contiene los elementos de estrategia desarrollados 
+postgresql/  Contiene el modelo de base de datos desarrollado, como también el script SQL
+src/            Código fuente de la aplicación Ruby on Rails
+tecnologia/     Contiene la descripción de los elementos de infraestructura técnica (Hardware / software de servidores)
 ```
