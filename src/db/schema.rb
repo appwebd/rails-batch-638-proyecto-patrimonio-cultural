@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_013415) do
+ActiveRecord::Schema.define(version: 2021_08_07_015045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calificacions", force: :cascade do |t|
+    t.integer "ranking"
+    t.string "descripcion"
+    t.date "fecha"
+    t.bigint "patrimonio_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patrimonio_id"], name: "index_calificacions_on_patrimonio_id"
+    t.index ["user_id"], name: "index_calificacions_on_user_id"
+  end
 
   create_table "comunas", force: :cascade do |t|
     t.string "nombre"
@@ -73,6 +85,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_013415) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "calificacions", "patrimonios"
+  add_foreign_key "calificacions", "users"
   add_foreign_key "comunas", "provincia", column: "provincia_id"
   add_foreign_key "patrimonios", "comunas"
   add_foreign_key "patrimonios", "patrimonio_tipos"
