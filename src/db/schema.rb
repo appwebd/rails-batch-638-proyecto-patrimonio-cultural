@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_012546) do
+ActiveRecord::Schema.define(version: 2021_08_07_013415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,23 @@ ActiveRecord::Schema.define(version: 2021_08_07_012546) do
     t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "patrimonios", force: :cascade do |t|
+    t.string "descripcion"
+    t.string "ubicacion"
+    t.string "telefono"
+    t.string "email"
+    t.decimal "geo_ref_latitud"
+    t.decimal "geo_ref_longitud"
+    t.bigint "patrimonio_tipo_id", null: false
+    t.bigint "comuna_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comuna_id"], name: "index_patrimonios_on_comuna_id"
+    t.index ["patrimonio_tipo_id"], name: "index_patrimonios_on_patrimonio_tipo_id"
+    t.index ["user_id"], name: "index_patrimonios_on_user_id"
   end
 
   create_table "provincia", force: :cascade do |t|
@@ -57,5 +74,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_012546) do
   end
 
   add_foreign_key "comunas", "provincia", column: "provincia_id"
+  add_foreign_key "patrimonios", "comunas"
+  add_foreign_key "patrimonios", "patrimonio_tipos"
+  add_foreign_key "patrimonios", "users"
   add_foreign_key "provincia", "regions"
 end
