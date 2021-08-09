@@ -1,4 +1,4 @@
-class Provincium < ApplicationRecord
+class Provincia < ApplicationRecord
   belongs_to :region
   has_many :comuna, dependent: :destroy
 

@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2021_08_07_015045) do
 
   create_table "comunas", force: :cascade do |t|
     t.string "nombre"
-    t.bigint "provincia_id", null: false
+    t.bigint "provincias_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["provincia_id"], name: "index_comunas_on_provincia_id"
+    t.index ["provincias_id"], name: "index_comunas_on_provincias_id"
   end
 
   create_table "patrimonio_tipos", force: :cascade do |t|
@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(version: 2021_08_07_015045) do
     t.index ["user_id"], name: "index_patrimonios_on_user_id"
   end
 
-  create_table "provincia", force: :cascade do |t|
+  create_table "provincias", force: :cascade do |t|
     t.string "nombre"
     t.bigint "region_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["region_id"], name: "index_provincia_on_region_id"
+    t.index ["region_id"], name: "index_provincias_on_region_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -87,9 +87,9 @@ ActiveRecord::Schema.define(version: 2021_08_07_015045) do
 
   add_foreign_key "calificacions", "patrimonios"
   add_foreign_key "calificacions", "users"
-  add_foreign_key "comunas", "provincia", column: "provincia_id"
+  add_foreign_key "comunas", "provincias", column: "provincias_id"
   add_foreign_key "patrimonios", "comunas"
   add_foreign_key "patrimonios", "patrimonio_tipos"
   add_foreign_key "patrimonios", "users"
-  add_foreign_key "provincia", "regions"
+  add_foreign_key "provincias", "regions"
 end
