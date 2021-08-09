@@ -442,4 +442,14 @@ Comuna.create([
               ]
 )
 
+puts 'Creando Patrimonio tipo ...'
+
+Patrimonio_tipo.create(
+  [
+    { id: 1, nombre: 'Patrimonio Inmaterial: Tesoro Humano Vivo', active: true },
+    { id: 2, nombre: 'Patrimonio Inmaterial: Festividades', active: true },
+    { id: 3, nombre: 'Arquitectónico', active: true },
+
+  ]
+)
 puts 'OK Seed completado.'
