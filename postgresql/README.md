@@ -3,7 +3,7 @@
 La aplicación emplea como base de datos física Postgresql. El modelo de datos de la aplicación está
 mostrado en la siguiente figura
 
-[![Esta es una imagen de ejemplo](https://ejemplo.com/imagen.jpg)](https://ejemplo.com)
+[![Modelo de datos de la aplicación Patrimonial App](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/postgresql/modelo.png?raw=true)](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/postgresql/modelo.png?raw=true)
 
 -------------------
 TABLAS
