@@ -6,18 +6,21 @@ mostrado en la siguiente figura
 [![Modelo de datos de la aplicación Patrimonial App](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/postgresql/modelo.png?raw=true)](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/postgresql/modelo.png?raw=true)
 
 -------------------
+
 TABLAS
-```
-calificacion     Calificaciones de usuario de la plataforma a servicios ofrecidos en patrimonio Cultural
-comuna           Contiene las comunas de Chile
-patrimonio       Permite registrar patrimonio cultural de interés en la comuna
-patrimonio_tipo  Permite clasificar el tipo de Patrimonio cultural a mostrar en la plataforma
-provincias       Contiene las provincias de Chile
-region           Contiene las regiones de la división territorial de Chile
-```
+
+|Tabla| Descripción |
+|-------------|-------------|
+|calificacion|     Calificaciones de usuario de la plataforma a servicios ofrecidos en patrimonio Cultural|
+|comuna      |     Contiene las comunas de Chile|
+|patrimonio  |     Permite registrar patrimonio cultural de interés en la comuna|
+|patrimonio_tipo|  Permite clasificar el tipo de Patrimonio cultural a mostrar en la plataforma|
+|provincias     |  Contiene las provincias de Chile|
+|region         |  Contiene las regiones de la división territorial de Chile|
+
 
 DICCIONARIO DE DATOS
-```
+
 |CoLumna nombre      |     Tabla     | Tipo de dato|Tamaño|                             Descripción                             |
 |--------------------|---------------|-------------|------|---------------------------------------------------------------------|
 |active              |patrimonio_tipo|boolean      |      |Permite saber si registro de tipo de patrimonio está activo          |
@@ -55,4 +58,4 @@ DICCIONARIO DE DATOS
 |ubicacion           |patrimonio     |char         |200   |Ubicación con el formato calle depto(/casa nro.                      |
 |user_id             |calificacion   |integer      |      |Clave foranea de usuario                                             |
 |user_id             |patrimonio     |integer      |      |Clave foranea de usuario                                             |
-```
+
