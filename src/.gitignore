@@ -34,11 +34,13 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.idea/*
 # Ignore .env file containing credentials.
 .env*
+.env
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
 .scannerwork/*
-.env
-
+run-sonarqube-analysis.sh
