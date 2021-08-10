@@ -72,3 +72,4 @@ yarn-debug.log*
 .idea/modules/src.iml
 .idea/modules.xml
 .idea/misc.xml
+.DS_Store
