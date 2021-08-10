@@ -12,6 +12,6 @@ class Patrimonio < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :email, length: { maximum: 254 }
    
-  validates :geo_ref_latitud, :decimal, {:precision=>10, :scale=>6}
-  validates :geo_ref_longitud, :decimal, {:precision=>10, :scale=>6}
+  #validates :geo_ref_latitud, :decimal, {precision: 10, scale: 6}
+  #validates :geo_ref_longitud, :decimal, {:precision=>10, :scale=>6}
 end

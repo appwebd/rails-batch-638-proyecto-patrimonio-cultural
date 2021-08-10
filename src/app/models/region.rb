@@ -1,5 +1,5 @@
 class Region < ApplicationRecord
-  has_many :provinciums, dependent: :destroy
+  has_many :provs, dependent: :destroy
 
   validates :nombre, uniqueness: true, presence: true
   validates :nombre, length: { maximum: 60 }
