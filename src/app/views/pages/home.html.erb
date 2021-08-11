@@ -10,13 +10,14 @@
 
       <%= form_for :search, method: :get, url: root_path do |form| %>
         <%= form.label :value, 'Buscar por localidad' %>
-        <%= form.text_field :value, placeholder: @current_location_by_ip %>
+        <%= form.text_field :value, placeholder: @ciudad %>
         <%= form.submit 'Buscar' %>
       <% end %>
 
     </div>
 
     <div class="col-6">
+
       <div id="map"
            class="mapStyle"
            data-markers="<%= @markers.to_json %>"
