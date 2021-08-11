@@ -9,11 +9,9 @@ Proyecto Patrimonial Cultural o Patrimonial App, es una aplicación desarrollada
 
 Este proyecto de bootcamp, se ha dividido en las siguientes etapas, que pueden ubicarse en las carpetas:
 
--------------------
-
-```
-estrategia/     Contiene los elementos de estrategia desarrollados 
-postgresql/  Contiene el modelo de base de datos desarrollado, como también el script SQL
-src/            Código fuente de la aplicación Ruby on Rails
-tecnologia/     Contiene la descripción de los elementos de infraestructura técnica (Hardware / software de servidores)
-```
+| Carpeta | Descripción|
+|-------------|-------------|
+|estrategia/ | Contiene los elementos de estrategia desarrollados | 
+|postgresql/ | Contiene el modelo de base de datos, como también el script SQL|
+|src/        | Código fuente de la aplicación Ruby on Rails|
+|tecnologia/ | Contiene la descripción de los elementos de infraestructura técnica (Hardware / software de servidores)|
