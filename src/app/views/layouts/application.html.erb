@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>RailsBatch638ProyectoPatrimonioCultural</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RailsBatch638ProyectoPatrimonioCultural</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application' %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+</head>
 
-    <%= yield %>
+<body>
+<%= render 'shared/navbar' %>
+<%= render 'shared/flashes' %>
+<br>
+<%= yield %>
 
-    <%= render 'shared/footer' %>
-  </body>
+<%= render 'shared/footer' %>
+</body>
 </html>

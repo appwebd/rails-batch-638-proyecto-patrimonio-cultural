@@ -1,4 +1,31 @@
 <div class="container">
-  <h1>Páginas#home</h1>
-  <p>Encuéntrame en  app/views/pages/home.html.erb</p>
+  <div class="row">
+    <div class="col-6">
+      <h1>A dónde vas<br>a viajar?</h1><br>
+      <p class="text-justify"> Chile al alcance de todos. <br>
+        Conoce el capital cultural de la mano de sus personajes y de impresionantes paisajes.</p>
+      <br>
+      <p><strong>Ven a conocernos</strong></p>
+      <br>
+
+      <%= form_for :search, method: :get, url: root_path do |form| %>
+        <%= form.label :value, 'Buscar por localidad' %>
+        <%= form.text_field :value, placeholder: @current_location_by_ip %>
+        <%= form.submit 'Buscar' %>
+      <% end %>
+
+    </div>
+
+    <div class="col-6">
+      <div id="map"
+           class="mapStyle"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
+
+
+  </div>
+
 </div>

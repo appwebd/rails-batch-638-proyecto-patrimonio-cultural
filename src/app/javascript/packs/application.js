@@ -29,3 +29,14 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Using mapbox javascript projaso 2021 08 10
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+// internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+    initMapbox();
+});
