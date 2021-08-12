@@ -452,47 +452,5 @@ PatrimonioTipo.create(
 
   ]
 )
-puts "Creando usuario id:1 test1@gmail.com ..."
-User.create(
-  id: 1,
-  email: "test1@gmail.com",
-  nombre: "111111111",
-  apellidos: "111111111111",
-  tipo_usuario: 0,
-  password:              "123456",
-  password_confirmation: "123456"
-)
-puts "Creando usuario id:2 test2@gmail.com ..."
-
-User.create(
-  id: 2,
-  email: "test2@gmail.com",
-  nombre: "2222222222222",
-  apellidos: "222222222",
-  tipo_usuario: 0,
-  password:              "123456",
-  password_confirmation: "123456"
-)
-puts "Creando usuario id:3 test3@gmail.com ..."
-User.create(
-  id: 3,
-  email: "test3@gmail.com",
-  nombre: "Americo",
-  apellidos: "Muller",
-  tipo_usuario: 0,
-  password:              "123456",
-  password_confirmation: "123456"
-)
-
-puts "Creando usuario id:4 test4@gmail.com ..."
-User.create(
-  id: 4,
-  email: "test4@gmail.com",
-  nombre: "33333333333",
-  apellidos: "33333",
-  tipo_usuario: 0,
-  password: "123456",
-  password_confirmation: "123456"
-)
 
 puts 'OK Seed completado.'
