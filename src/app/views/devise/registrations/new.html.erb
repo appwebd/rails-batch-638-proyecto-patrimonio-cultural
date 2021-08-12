@@ -1,48 +1,9 @@
-<html>
-<head>
- <style>
-      .col-6 {
-        height: 614px;
-        width: 450px;
-        left: 0px;
-        top: 0px;
-        bottom: 0px;
-        border-radius: 46px;
-        background: #F1F1F1
-      }
-
-      .form-inputs {
-        width: 450px;
-        border-radius: nullpx;
-        align-items: center;
-        align-self: center;
-        align-content: center;
-        margin: 5px 40px
-      }
-
-      .form-actions {
-        height: 73px;
-        align-items: center;
-        margin: 5px 200px;
-        display: flex;
-        text-align: center
-      }
-    </style>
-</head>
-<body>
-<br>
   <div class="container">
     <div class="row">
-      <div class="col-6 card">
-        <br>
-        <head>
-          <h3 >Registro de usuario</h3>
-          <style>
-            h3 {
-              text-align: center;
-            }
-          </style>
-        </head>
+      <div class="col-6 patrimonial_card">
+        <br>        
+          <h3 class="text-center">Registro de usuario</h3>
+          
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -56,12 +17,10 @@
     <%= f.input :apellidos,
                 label: 'Apellido',
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: 'apellidos', placeholder: 'apellido'  } %>
     <%= f.input :email,
                 label: 'Correo electrónico',
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: 'email', placeholder: 'correo electrónico'  } %>
     <%= f.input :password,
                 label: 'Contraseña',
@@ -81,7 +40,6 @@
 
 <% end %>
 
+    </div>
+  </div>
 </div>
-<body>
-<html>
-
