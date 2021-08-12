@@ -5,16 +5,23 @@ class OferenteController < ApplicationController
   end
 
   def nuevo
+    @oferente = Oferente.new
   end
 
   def crear
-
+    @oferente = Oferente.new(params_oferente)
+    if @oferente.save
+      redirect_to lists_path(@oferente.id)
+    else
+      render :new
+    end
   end
 
   def calificacion
   end
 
   def editar
+    # application does not need implementation code
   end
 
   def actualizar
@@ -28,6 +35,10 @@ class OferenteController < ApplicationController
     flash[:notice] = @user.error.full_messages.to_sentence unless @user.save
     redirect_to root_path
     byebug
+  end
+
+  def params_oferente
+    params.require(:oferente).permit(:nombre)
   end
 
   private
