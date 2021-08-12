@@ -4,5 +4,11 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'roboto', sans-serif;
+}
+
+.mapStyle {
+  margin-top: 5px;
+  display: block;
+  max-height: 100%;
 }

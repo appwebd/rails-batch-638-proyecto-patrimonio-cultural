@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'pages#home'
+  post 'resultado/', to: 'pages#resultado', as: :resultado
 
   Rails.application.routes.draw do
     get 'oferentes/index', to: 'oferente#index', as: :oferentes
