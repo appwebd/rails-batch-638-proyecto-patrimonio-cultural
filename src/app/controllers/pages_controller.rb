@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   def home
     @current_location_by_ip = client_ip
     @results = Geocoder.search(@current_location_by_ip)
+
     @ciudad = ""
     @ciudad = @results.first.city unless @results.first.city.nil?
 
