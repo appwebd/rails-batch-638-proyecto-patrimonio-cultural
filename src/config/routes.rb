@@ -20,23 +20,21 @@ Rails.application.routes.draw do
     delete 'oferentes/:id', to: 'oferente#eliminar'
 
 
-    devise_for :users,
-               :path => "oferente",
-               :path_names => {
-                 :sign_in => 'control-de-acceso',
-                 :sign_out => 'desconectar',
-                 :password => 'secret',
-                 :confirmation => 'verificacion',
-                 :unlock => 'desbloquear',
-                 :registrations => 'registrarse',
-                 :sign_up => 'inscribirse'
-               }
+
+    #devise_for :users,
+    #           :path => "oferente",
+    #           :path_names => {
+    #             :sign_in => 'control-de-acceso',
+    #             :sign_out => 'desconectar',
+    #             :password => 'secret',
+    #             :confirmation => 'verificacion',
+    #             :unlock => 'desbloquear',
+    #             :registrations => 'registrarse',
+    #             :sign_up => 'inscribirse'
+    #           }
 
 
-    #devise_for :users, controllers: {
-    #  sessions: 'users/sessions',
-    #  registrations: 'users/registrations'
-    #}
+    devise_for :users
   end
 
   get '/terminos-de-uso', to: 'pages#termino_de_uso'
