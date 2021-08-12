@@ -9,11 +9,11 @@ class PagesController < ApplicationController
     @current_location_by_ip = client_ip
     @results = Geocoder.search(@current_location_by_ip)
     @ciudad = @results.first.city
-    @markers = @results.map do |ubicacion|
+    @markers = @results.map do |pages|
       {
-        lat: ubicacion.latitude,
-        lng: ubicacion.longitude,
-        info_window: render_to_string(partial: "infowindow", locals: { ubicacion: ubicacion })
+        lat: pages.latitude,
+        lng: pages.longitude,
+        info_window: render_to_string(partial: "infowindow", locals: { pages: pages })
       }
     end
   end

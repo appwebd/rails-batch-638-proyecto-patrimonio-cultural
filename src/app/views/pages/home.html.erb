@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-5">
+      <br>
       <h1>A dónde vas<br>a viajar?</h1><br>
       <p class="text-justify"> Chile al alcance de todos. <br>
         Conoce el capital cultural de la mano de sus personajes y de impresionantes paisajes.</p>
@@ -16,15 +17,13 @@
 
     </div>
 
-    <div class="col-6">
-
+    <div class="col-7">
       <div id="map"
            class="mapStyle"
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-
 
 
   </div>
