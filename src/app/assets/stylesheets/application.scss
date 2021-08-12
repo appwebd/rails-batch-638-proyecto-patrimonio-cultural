@@ -32,3 +32,30 @@ body {
 .logo {
   width: 200px;
 }
+
+.patrimonial_card {
+  height: 614px;
+  width: 450px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 46px;
+  background: #F1F1F1
+}
+
+.form-inputs {
+  width: 450px;
+  border-radius: 46px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  margin: 5px 40px
+}
+
+.form-actions {
+  height: 73px;
+  align-items: center;
+  margin: 5px 200px;
+  display: flex;
+  text-align: center
+}
