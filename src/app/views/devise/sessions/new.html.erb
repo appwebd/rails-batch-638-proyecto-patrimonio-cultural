@@ -1,9 +1,51 @@
+<html>
+<head>
+ <style>
+      .col-6 {
+        height: 490px;
+        width: 450px;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        border-radius: 46px;
+        background: #F1F1F1
+      }
 
+      .form-inputs {
+        width: 450px;
+        border-radius: nullpx;
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        margin: 5px 40px;
+      }
+
+      .form-actions {
+        height: 73px;
+        align-items: center;
+        margin: 5px 235px;
+        display: flex;
+        text-align: center
+      }
+    </style>
+</head>
+<body>
 <br>
 <div class="container">
   <div class="row">
     <div class="col-6 card">
-      <h2 >Inicio de sesión</h2>
+      <br>
+      <br>
+        <head>
+          <h3 >Inicio de sesión</h3>
+          <style>
+            h3 {
+              text-align: center;
+              vertical-align: center;
+            }
+          </style>
+        </head>
+
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
@@ -21,13 +63,22 @@
                         as: :boolean if devise_mapping.rememberable? %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "Inicio", class: "btn btn-primary" %>
+            <%= f.button :submit, "Inicio", class: "btn btn-primary btn" %>
           </div>
         <% end %>
-        <br>
-        <%= render "devise/shared/links" %>
+
+          <head>
+            <div class="devise">
+                <%= render "devise/shared/links" %>
+                  <style>
+                    .devise {
+                      text-align: center;
+                    }
+                  </style>
+            </div>
+          </head>
     </div>
-    <div class="col-6">
+    <div class="col-5">
       <br>
       <br>
       seleccionar una imagen randomicamente
