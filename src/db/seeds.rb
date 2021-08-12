@@ -32,63 +32,63 @@ Region.create([
 puts 'Creando provincias ...'
 
 Prov.create([
-                    { id: 1, nombre: 'Arica', region_id: 1 },
-                    { id: 2, nombre: 'Parinacota', region_id: 1 },
-                    { id: 3, nombre: 'Iquique', region_id: 2 },
-                    { id: 4, nombre: 'El Tamarugal', region_id: 2 },
-                    { id: 5, nombre: 'Tocopilla', region_id: 3 },
-                    { id: 6, nombre: 'El Loa', region_id: 3 },
-                    { id: 7, nombre: 'Antofagasta', region_id: 3 },
-                    { id: 8, nombre: 'Chañaral', region_id: 4 },
-                    { id: 9, nombre: 'Copiapó', region_id: 4 },
-                    { id: 10, nombre: 'Huasco', region_id: 4 },
-                    { id: 11, nombre: 'Elqui', region_id: 5 },
-                    { id: 12, nombre: 'Limarí', region_id: 5 },
-                    { id: 13, nombre: 'Choapa', region_id: 5 },
-                    { id: 14, nombre: 'Petorca', region_id: 6 },
-                    { id: 15, nombre: 'Los Andes', region_id: 6 },
-                    { id: 16, nombre: 'San Felipe de Aconcagua', region_id: 6 },
-                    { id: 17, nombre: 'Quillota', region_id: 6 },
-                    { id: 18, nombre: 'Valparaiso', region_id: 6 },
-                    { id: 19, nombre: 'San Antonio', region_id: 6 },
-                    { id: 20, nombre: 'Isla de Pascua', region_id: 6 },
-                    { id: 21, nombre: 'Marga Marga', region_id: 6 },
-                    { id: 22, nombre: 'Chacabuco', region_id: 7 },
-                    { id: 23, nombre: 'Santiago', region_id: 7 },
-                    { id: 24, nombre: 'Cordillera', region_id: 7 },
-                    { id: 25, nombre: 'Maipo', region_id: 7 },
-                    { id: 26, nombre: 'Melipilla', region_id: 7 },
-                    { id: 27, nombre: 'Talagante', region_id: 7 },
-                    { id: 28, nombre: 'Cachapoal', region_id: 8 },
-                    { id: 29, nombre: 'Colchagua', region_id: 8 },
-                    { id: 30, nombre: 'Cardenal Caro', region_id: 8 },
-                    { id: 31, nombre: 'Curicó', region_id: 9 },
-                    { id: 32, nombre: 'Talca', region_id: 9 },
-                    { id: 33, nombre: 'Linares', region_id: 9 },
-                    { id: 34, nombre: 'Cauquenes', region_id: 9 },
-                    { id: 35, nombre: 'Diguillín', region_id: 10 },
-                    { id: 36, nombre: 'Itata', region_id: 10 },
-                    { id: 37, nombre: 'Punilla', region_id: 10 },
-                    { id: 38, nombre: 'Bio Bío', region_id: 11 },
-                    { id: 39, nombre: 'Concepción', region_id: 11 },
-                    { id: 40, nombre: 'Arauco', region_id: 11 },
-                    { id: 41, nombre: 'Malleco', region_id: 12 },
-                    { id: 42, nombre: 'Cautín', region_id: 12 },
-                    { id: 43, nombre: 'Valdivia', region_id: 13 },
-                    { id: 44, nombre: 'Ranco', region_id: 13 },
-                    { id: 45, nombre: 'Osorno', region_id: 14 },
-                    { id: 46, nombre: 'Llanquihue', region_id: 14 },
-                    { id: 47, nombre: 'Chiloé', region_id: 14 },
-                    { id: 48, nombre: 'Palena', region_id: 14 },
-                    { id: 49, nombre: 'Coyhaique', region_id: 15 },
-                    { id: 50, nombre: 'Aysén', region_id: 15 },
-                    { id: 51, nombre: 'General Carrera', region_id: 15 },
-                    { id: 52, nombre: 'Capitán Prat', region_id: 15 },
-                    { id: 53, nombre: 'Última Esperanza', region_id: 16 },
-                    { id: 54, nombre: 'Magallanes', region_id: 16 },
-                    { id: 55, nombre: 'Tierra del Fuego', region_id: 16 },
-                    { id: 56, nombre: 'Antártica Chilena', region_id: 16 }
-                  ])
+              { id: 1, nombre: 'Arica', region_id: 1 },
+              { id: 2, nombre: 'Parinacota', region_id: 1 },
+              { id: 3, nombre: 'Iquique', region_id: 2 },
+              { id: 4, nombre: 'El Tamarugal', region_id: 2 },
+              { id: 5, nombre: 'Tocopilla', region_id: 3 },
+              { id: 6, nombre: 'El Loa', region_id: 3 },
+              { id: 7, nombre: 'Antofagasta', region_id: 3 },
+              { id: 8, nombre: 'Chañaral', region_id: 4 },
+              { id: 9, nombre: 'Copiapó', region_id: 4 },
+              { id: 10, nombre: 'Huasco', region_id: 4 },
+              { id: 11, nombre: 'Elqui', region_id: 5 },
+              { id: 12, nombre: 'Limarí', region_id: 5 },
+              { id: 13, nombre: 'Choapa', region_id: 5 },
+              { id: 14, nombre: 'Petorca', region_id: 6 },
+              { id: 15, nombre: 'Los Andes', region_id: 6 },
+              { id: 16, nombre: 'San Felipe de Aconcagua', region_id: 6 },
+              { id: 17, nombre: 'Quillota', region_id: 6 },
+              { id: 18, nombre: 'Valparaiso', region_id: 6 },
+              { id: 19, nombre: 'San Antonio', region_id: 6 },
+              { id: 20, nombre: 'Isla de Pascua', region_id: 6 },
+              { id: 21, nombre: 'Marga Marga', region_id: 6 },
+              { id: 22, nombre: 'Chacabuco', region_id: 7 },
+              { id: 23, nombre: 'Santiago', region_id: 7 },
+              { id: 24, nombre: 'Cordillera', region_id: 7 },
+              { id: 25, nombre: 'Maipo', region_id: 7 },
+              { id: 26, nombre: 'Melipilla', region_id: 7 },
+              { id: 27, nombre: 'Talagante', region_id: 7 },
+              { id: 28, nombre: 'Cachapoal', region_id: 8 },
+              { id: 29, nombre: 'Colchagua', region_id: 8 },
+              { id: 30, nombre: 'Cardenal Caro', region_id: 8 },
+              { id: 31, nombre: 'Curicó', region_id: 9 },
+              { id: 32, nombre: 'Talca', region_id: 9 },
+              { id: 33, nombre: 'Linares', region_id: 9 },
+              { id: 34, nombre: 'Cauquenes', region_id: 9 },
+              { id: 35, nombre: 'Diguillín', region_id: 10 },
+              { id: 36, nombre: 'Itata', region_id: 10 },
+              { id: 37, nombre: 'Punilla', region_id: 10 },
+              { id: 38, nombre: 'Bio Bío', region_id: 11 },
+              { id: 39, nombre: 'Concepción', region_id: 11 },
+              { id: 40, nombre: 'Arauco', region_id: 11 },
+              { id: 41, nombre: 'Malleco', region_id: 12 },
+              { id: 42, nombre: 'Cautín', region_id: 12 },
+              { id: 43, nombre: 'Valdivia', region_id: 13 },
+              { id: 44, nombre: 'Ranco', region_id: 13 },
+              { id: 45, nombre: 'Osorno', region_id: 14 },
+              { id: 46, nombre: 'Llanquihue', region_id: 14 },
+              { id: 47, nombre: 'Chiloé', region_id: 14 },
+              { id: 48, nombre: 'Palena', region_id: 14 },
+              { id: 49, nombre: 'Coyhaique', region_id: 15 },
+              { id: 50, nombre: 'Aysén', region_id: 15 },
+              { id: 51, nombre: 'General Carrera', region_id: 15 },
+              { id: 52, nombre: 'Capitán Prat', region_id: 15 },
+              { id: 53, nombre: 'Última Esperanza', region_id: 16 },
+              { id: 54, nombre: 'Magallanes', region_id: 16 },
+              { id: 55, nombre: 'Tierra del Fuego', region_id: 16 },
+              { id: 56, nombre: 'Antártica Chilena', region_id: 16 }
+            ])
 
 puts 'Creando comunas ...'
 
@@ -452,4 +452,47 @@ PatrimonioTipo.create(
 
   ]
 )
+puts "Creando usuario id:1 test1@gmail.com ..."
+User.create(
+  id: 1,
+  email: "test1@gmail.com",
+  nombre: "111111111",
+  apellidos: "111111111111",
+  tipo_usuario: 0,
+  password:              "123456",
+  password_confirmation: "123456"
+)
+puts "Creando usuario id:2 test2@gmail.com ..."
+
+User.create(
+  id: 2,
+  email: "test2@gmail.com",
+  nombre: "2222222222222",
+  apellidos: "222222222",
+  tipo_usuario: 0,
+  password:              "123456",
+  password_confirmation: "123456"
+)
+puts "Creando usuario id:3 test3@gmail.com ..."
+User.create(
+  id: 3,
+  email: "test3@gmail.com",
+  nombre: "Americo",
+  apellidos: "Muller",
+  tipo_usuario: 0,
+  password:              "123456",
+  password_confirmation: "123456"
+)
+
+puts "Creando usuario id:4 test4@gmail.com ..."
+User.create(
+  id: 4,
+  email: "test4@gmail.com",
+  nombre: "33333333333",
+  apellidos: "33333",
+  tipo_usuario: 0,
+  password: "123456",
+  password_confirmation: "123456"
+)
+
 puts 'OK Seed completado.'
