@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-5">
+    <div class="col-4">
       <br>
       <h1>A dónde vas<br>a viajar?</h1><br>
       <p class="text-justify"> Chile al alcance de todos. <br>
@@ -9,15 +9,17 @@
       <p><strong>Ven a conocernos</strong></p>
       <br>
 
-      <%= form_for :search, method: :get, url: root_path do |form| %>
-        <%= form.label :value, 'Buscar por localidad' %>
+      <%= form_for :search, method: :post, url: resultado_path do |form| %>
+        <%= form.label :value, 'Buscar patrimonios por localidad' %><br/>
         <%= form.text_field :value, placeholder: @ciudad %>
-        <%= form.submit 'Buscar' %>
+
+        <%= form.submit 'Buscar', class: "btn btn-primary button_rounded" %>
       <% end %>
 
     </div>
 
     <div class="col-7">
+
       <div id="map"
            class="mapStyle"
            data-markers="<%= @markers.to_json %>"

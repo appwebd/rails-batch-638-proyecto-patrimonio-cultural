@@ -1,7 +1,7 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-6 patrimonial_card">
+    <div class="col-4 patrimonial_card">
       <br>
       <br>
           <h3 class="text-center">Inicio de sesión</h3>
@@ -19,20 +19,21 @@
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
 
-          </div>
-          <div class="form-actions text-center">
-            &nbsp; &nbsp; &nbsp; <%= f.button :submit, "  Inicio  ", class: "btn btn-primary btn" %>
 
-
+            <div class="text-center">
+              <%= f.button :submit, "   Inicio   ", class: "btn btn-primary btn  button_rounded" %>
+              <br/>
+              <br/>
+              <%= render "devise/shared/links" %>
+            </div>
           </div>
+
         <% end %>
 
-          <div class="text-center">
-            <%= render "devise/shared/links" %>
-          </div>
+
 
     </div>
-    <div class="col-5">
+    <div class="col">
       <br>
       <br>
       seleccionar una imagen randomicamente

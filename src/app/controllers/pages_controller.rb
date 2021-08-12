@@ -8,7 +8,9 @@ class PagesController < ApplicationController
   def home
     @current_location_by_ip = client_ip
     @results = Geocoder.search(@current_location_by_ip)
-    @ciudad = @results.first.city
+    @ciudad = ""
+    @ciudad = @results.first.city unless @results.first.city.nil?
+
     @markers = @results.map do |pages|
       {
         lat: pages.latitude,
@@ -18,11 +20,21 @@ class PagesController < ApplicationController
     end
   end
 
+  def resultado
+
+  end
+
   def politica_de_privacidad
     render('politica-de-privacidad')
   end
 
   def termino_de_uso
     render('terminos-de-uso')
+  end
+
+  private
+
+  def home_buscar_params
+    params.require(:localidad).permit(:localidad)
   end
 end
