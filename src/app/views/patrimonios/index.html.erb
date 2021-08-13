@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patrimonios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patrimonios.each do |patrimonio| %>
+      <tr>
+        <td><%= patrimonio.name %></td>
+        <td><%= patrimonio.user_id %></td>
+
+        <% if can_do?(patrimonio, :show?) %>
+          <td><%= link_to 'Show', patrimonio %></td>
+        <% end %>
+
+        <% if can_do?(patrimonio, :edit?) %>
+          <td><%= link_to 'Edit', edit_patrimonio_path(patrimonio) %></td>
+        <% end %>
+
+        <% if can_do?(patrimonio, :destroy?) %>
+          <td><%= link_to 'Destroy', patrimonio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if policy(Patrimonio).create? %>
+  <%= link_to "New patrimonio", new_patrimonio_path %>
+<% end %>
+
