@@ -6,7 +6,7 @@
 # breaking changes in upgrades (i.e., in the event that future versions of
 # Devise change the default values for those options).
 #
-# Use this hook to configure users mailer, warden hooks and so forth.
+# Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
@@ -14,17 +14,17 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '799ee9749947580f6dd8da07bc2e3ac6782f8b83f01a08835d7a8b54998beb9154a8f4f18502fb51788e0efa141201ccdff51efaac7ebf2e79a1b770241bd8da'
+  # config.secret_key = '11829a795c28b5b9132155053496a04b5d13c7245a6e7444f5c77021d38c98347515a0f3ba8688f6493b78f1215745e08a6ddba8ff5f24cf62c66c58614bcbc4'
 
   # ==> Controller configuration
-  # Configure the parent class to the users controllers.
+  # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-users@example.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '087074f2f05dea60f2e8482bebe670cc30c4327dbe1c1847beaa2407e8822c1002d09eb526c2b28839dc389e86c8d70944bb66374e991a831c6a1f5c2461f1b1'
+  # config.pepper = '9744cc259c7a8168c8cdb6bc874cb7627d3937624b9b4ec1bd5151c0438fd00f09c71140af6ef394319a3a5861016f9cb010c5b12da20e9ba06409c72fec87e0'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -237,7 +237,7 @@ Devise.setup do |config|
   # for default behavior) and :restful_authentication_sha1 (then you should set
   # stretches to 10, and copy REST_AUTH_SITE_KEY to pepper).
   #
-  # Require the `users-encryptable` gem when using anything other than bcrypt
+  # Require the `devise-encryptable` gem when using anything other than bcrypt
   # config.encryptor = :sha512
 
   # ==> Scopes configuration
@@ -247,7 +247,7 @@ Devise.setup do |config|
   # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
-  # users role declared in your routes (usually :user).
+  # devise role declared in your routes (usually :user).
   # config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out

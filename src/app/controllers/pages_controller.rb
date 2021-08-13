@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[contacto home politica_de_privacidad termino_de_uso]
+  skip_before_action :authenticate_user!, only: %i[home contacto home politica_de_privacidad termino_de_uso]
 
   def contacto
     render('contacto')
