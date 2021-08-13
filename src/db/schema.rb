@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2021_08_09_232608) do
     t.string "encrypted_password", default: "", null: false
     t.string "nombre", null: false
     t.string "apellidos", null: false
-    t.integer "tipo_usuario"
+    t.integer "tipo_usuario", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
