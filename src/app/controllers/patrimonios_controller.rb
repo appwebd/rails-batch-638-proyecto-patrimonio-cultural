@@ -1,5 +1,5 @@
 class PatrimoniosController < ApplicationController
-  before_action :set_patrimonio, only: [:show, :edit, :update, :destroy]
+  before_action :set_patrimonio, only: %i[show edit update destroy]
 
   # GET /patrimonios
   def index
@@ -49,14 +49,15 @@ class PatrimoniosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patrimonio
-      @patrimonio = Patrimonio.find(params[:id])
-       authorize @patrimonio
-    end
 
-    # Only allow a list of trusted parameters through.
-    def patrimonio_params
-      params.require(:patrimonio).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_patrimonio
+    @patrimonio = Patrimonio.find(params[:id])
+    authorize @patrimonio
+  end
+
+  # Only allow a list of trusted parameters through.
+  def patrimonio_params
+    params.require(:patrimonio).permit(:name)
+  end
 end

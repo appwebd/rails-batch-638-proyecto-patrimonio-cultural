@@ -9,7 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       t.string :nombre, null: false
       t.string :apellidos, null: false
-      t.integer :tipo_usuario
+      t.integer :tipo_usuario, null: false, default: 1 # tipo_usuario = 0 is user admin.
+
 
       ## Recoverable
       # t.string   :reset_password_token
