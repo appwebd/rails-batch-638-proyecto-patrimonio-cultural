@@ -2,17 +2,21 @@
   <div class="row">
     <div class="col-4 patrimonial_card">
       <br>
-      <h3 class="text-center">Registro de usuario</h3>
+      <h3 class="text-center">Actualización de perfil</h3>
 
 
       <%= simple_form_for(@user) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <%= f.input :photo, as: :file,
+              label: 'Fotografía',
+              autofocus: true
+          %>
           <%= f.input :nombre,
                       label: 'Nombre',
                       required: true,
-                      autofocus: true,
+
                       input_html: { autocomplete: 'name', placeholder: 'nombre' } %>
           <%= f.input :apellidos,
                       label: 'Apellido',
@@ -34,7 +38,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Registrarse", class: "btn btn-primary button_rounded" %>
+          <%= f.button :submit, "Actualizar", class: "btn btn-primary button_rounded" %>
         </div>
         <br>
 

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_after_action :verify_authorized, only: [:index]
   skip_before_action :authenticate_user!, only: [:index]
 
-  before_action :set_user, only: %i[edit destroy update show]
+  before_action :set_user, only: %i[destroy edit update show]
 
   def index
     authorize @user
@@ -10,15 +10,16 @@ class UsersController < ApplicationController
 
   # POST /
   def update
-    # TODO: se debe permitir al perfil usuario actualizar su informacion
+    @user.update(user_params)
+    redirect_to user(@user.id)
   end
 
   def show
-    # TODO: desarrollar perfil de usuario
+    # Muestra vista app/views/users/show.html.erb
   end
 
   def edit
-    # TODO: se debe permitir al perfil usuario editar su informacion
+    # Muestra vista app/views/users/edit.html.erb
   end
 
   def destroy
@@ -35,6 +36,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:apellidos, :photo, :nombre)
+    params.require(:user).permit(:apellidos, :email, :nombre, :photo, :password, :password_confirmation)
   end
 end

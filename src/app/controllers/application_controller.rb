@@ -16,8 +16,6 @@ class ApplicationController < ActionController::Base
   IP_LOCALHOST_IPV4 = '127.0.0.1'
   IP_LOCALHOST_IPV6 = '::1'
 
-
-
   # devise authorization
   # For additional fields in app/views/devise/registrations/new.html.erb
   # For additional in app/views/devise/registrations/edit.html.erb
