@@ -1,17 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <h1>Patrimonios</h1>
+    <table class="table">
 
-<h1>Patrimonios</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+      <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Reseña</th>
+        <th scope="col">Handle</th>
+      </tr>
+      </thead>
+      <tbody>
     <% @patrimonios.each do |patrimonio| %>
       <tr>
         <td><%= patrimonio.name %></td>
@@ -30,8 +29,14 @@
         <% end %>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+
 
 <br>
 

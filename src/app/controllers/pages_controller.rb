@@ -10,8 +10,9 @@ class PagesController < ApplicationController
     @results = Geocoder.search(@current_location_by_ip)
 
     @ciudad = ""
-    @ciudad = @results.first.city unless @results.first.city.nil?
+    @ciudad = @results.first.city unless @results.first.nil?
 
+    @user = current_user unless current_user.nil? # Necesario para asociar registros
     @markers = @results.map do |pages|
       {
         lat: pages.latitude,

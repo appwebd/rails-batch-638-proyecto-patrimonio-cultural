@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RegistrationsController < ::Devise::RegistrationsController
+class Users::RegistrationsController < ::Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -12,9 +12,8 @@ class RegistrationsController < ::Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(configure_sign_up_params)
-    flash[:notice] = @user.error.full_messages.to_sentence unless @user.save
+    flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
     redirect_to root_path
-    byebug
   end
 
   # GET /resource/edit
@@ -45,8 +44,9 @@ class RegistrationsController < ::Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-    params.require(:user).permit(:apellidos, :email, :nombre )
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[apellidos nombre])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[apellidos nombre])
+    params.require(:user).permit(:apellidos, :email, :nombre, :password, :password_confirmation)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

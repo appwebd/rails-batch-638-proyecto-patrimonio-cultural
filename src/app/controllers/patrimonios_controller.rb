@@ -3,6 +3,7 @@ class PatrimoniosController < ApplicationController
 
   # GET /patrimonios
   def index
+    @user = current_user
     @patrimonios = policy_scope(Patrimonio)
   end
 
@@ -52,6 +53,7 @@ class PatrimoniosController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_patrimonio
+    @user = current_user
     @patrimonio = Patrimonio.find(params[:id])
     authorize @patrimonio
   end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  devise_for :users
+  devise_for :users, :controllers => {sessions: "users/sessions", registrations: "users/registrations"}
 
   root to: 'pages#home'
   post '/resultado', to: 'pages#resultado', as: :resultado
@@ -11,25 +11,10 @@ Rails.application.routes.draw do
   #
   # TODO: refactorizar 12-26 en resources :oferente
   #
-  get 'oferentes/index', to: 'oferente#index', as: :oferentes
-
-  # crear un nuevo registro
-  get 'oferentes/new', to: 'oferente#new', as: :nuevo_oferente
-  post 'oferente', to: 'oferente#create'
-
-  # Mostrar
-  get 'oferentes/:id', to: 'oference#show', as: :mostrar_oferente
-
-  # Actualizar
-  get 'oferentes/:id/edit', to: 'oferente#edit', as: :editar_oferente
-  patch 'oferentes/:id', to: 'oferente#update'
-
-  # Eliminar el registro
-  delete 'oferentes/:id', to: 'oferente#destroy'
-
+  resources :patrimonios
 
   # Editar el perfil de usuario
   authenticate :user do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :edit, :update, :show, :destroy]
   end
 end

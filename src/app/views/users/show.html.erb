@@ -1,1 +1,43 @@
-This is profile
+<div class="container">
+  <div class="row">
+    <div class="col-7 ">
+
+        <br>
+        <h3 class="text-center">Información perfil</h3>
+
+<br>
+            <table class="table">
+              <tbody>
+              <tr>
+                <td>Fotografía</td>
+                <td>
+                  <%= user_mostrar_avatar(@user) %><br>
+                  <%= cl_image_tag @user.photo.key, class:"avatar-large" %>
+                </td>
+              </tr>
+              <tr><td>Nombre</td><td> <%= @user.nombre %></td></tr>
+              <tr><td>Apellidos</td><td> <%= @user.apellidos %></td></tr>
+              <tr><td>email</td><td> <%= @user.email %></td></tr>
+
+            </table>
+<br>
+
+
+      <%= link_to edit_user_path(current_user),  class: "btn btn-primary button_rounded", :method => :get, :title => "Actualizar #{@user.nombre}" do %>
+        <em class="fas fa-pencil-alt"></em> Actualizar perfil
+      <% end %>
+
+      <%= link_to @user, class: "btn btn-warning button_rounded", :method => :delete, :title => "Eliminar #{@user.nombre}", data: { :confirm => "Está seguro que desea eliminar su perfil?", disable_with: "Procesando ..." } do %>
+        <em class="fas fa-trash"></em> Eliminar perfil
+      <% end %>
+
+      <% link_to "/", class:"btn btn-primary", :method => :get, :title => "Volver a página de búsqueda patrimonial" do %>
+        <em class="fas fa-home"></em> Volver a página de búsqueda patrimonial
+      <% end %>
+      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <%= link_to "/", :method => :get, :title => "Ir a home " do %>
+        <em class="fas fa-home"></em> &nbsp; Ir a página de búsqueda
+      <% end %>
+    </div>
+  </div>
+</div>
