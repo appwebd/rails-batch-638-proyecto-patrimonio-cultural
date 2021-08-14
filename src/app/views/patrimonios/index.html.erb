@@ -7,14 +7,13 @@
       <tr>
         <th scope="col">Título</th>
         <th scope="col">Reseña</th>
-        <th scope="col">Handle</th>
       </tr>
       </thead>
       <tbody>
     <% @patrimonios.each do |patrimonio| %>
       <tr>
-        <td><%= patrimonio.name %></td>
-        <td><%= patrimonio.user_id %></td>
+        <td><%= patrimonio.titulo %></td>
+        <td><%= patrimonio.resena %></td>
 
         <% if can_do?(patrimonio, :show?) %>
           <td><%= link_to 'Show', patrimonio %></td>
@@ -27,6 +26,7 @@
         <% if can_do?(patrimonio, :destroy?) %>
           <td><%= link_to 'Destroy', patrimonio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+
       </tr>
     <% end %>
     </tbody>
