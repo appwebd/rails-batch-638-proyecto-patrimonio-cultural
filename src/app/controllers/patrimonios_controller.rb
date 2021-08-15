@@ -13,6 +13,7 @@ class PatrimoniosController < ApplicationController
 
   # GET /patrimonios/new
   def new
+    @user = current_user
     @patrimonio = Patrimonio.new
     authorize @patrimonio
   end

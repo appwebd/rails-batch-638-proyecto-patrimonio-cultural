@@ -12,7 +12,12 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(configure_sign_up_params)
-    flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
+    # flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
+    if @user.save
+      flash[:notice] = "Te has registrado correctamente!!"
+      sign_in(@user)
+    end
+
     redirect_to root_path
   end
 

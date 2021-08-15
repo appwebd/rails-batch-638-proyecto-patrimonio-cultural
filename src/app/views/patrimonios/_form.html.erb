@@ -2,11 +2,38 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+
   <div class="form-inputs">
-    <%= f.input :name %>
+    <h3>Información de contacto</h3>
+    <span class="help-block">Esta información es sólo para nuestro registros, no será mostrada al público</span>
+    <hr>
+    <%= f.input :telefono, placeholder: 'Número de teléfono' %>
+    <%= f.input :email, placeholder: 'Email' %>
+    <br/>
+    <h3>Información de Patrimonio</h3>
+    <hr>
+    <%= f.input :titulo, placeholder: 'Título descriptivo de su página de patrimonio' %>
+    <%= f.input :ubicacion, placeholder: 'Indique ubicación de patrimonio' %>
+    <%= f.input :descripcion, placeholder: 'Descripción patrimonio' %>
+
+<br>
+    <p>Seleccione el tipo de patrimonio*</p>
+
+      <%= collection_radio_buttons(:patrimonio, :patrimonio_tipo_id, PatrimonioTipo.all, :id, :nombre) do |b| %>
+        <div class="radio ">
+          <%= b.label do %>
+            <%= b.radio_button + '          ' + b.text %>
+          <% end %>
+        </div>
+      <%end %>
+<br>
+      <%= f.input :comuna_id, placeholder: 'comuna' %>
+
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class=" ">
+    <%= f.button  :submit, "Guardar", class: "btn btn-primary button_rounded"%> &nbsp; &nbsp; <%= back_list_admin('', patrimonios_path, ' ') %>
   </div>
+
 <% end %>

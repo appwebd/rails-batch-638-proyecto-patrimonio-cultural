@@ -1,5 +1,21 @@
-<h1>New Patrimonio</h1>
+<%= container_begin %>
+  <%= header_page('fas fa-mountain', 'Patrimonio nuevo') %>
+  <%= small_text("Por favor, ingrese toda la información solicitada.") %>
+  <br/><br/>
+  <div class="row">
+    <div class="col-2">
 
-<%= render 'form', patrimonio: @patrimonio %>
+    </div>
+    <div class="col">
 
-<%= link_to 'Back', patrimonios_path %>
+
+      <%= render 'form', patrimonio: @patrimonio %>
+
+
+
+
+    </div>
+  </div>
+
+
+<%= container_end %>

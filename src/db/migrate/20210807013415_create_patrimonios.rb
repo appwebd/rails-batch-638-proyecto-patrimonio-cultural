@@ -1,6 +1,7 @@
 class CreatePatrimonios < ActiveRecord::Migration[6.1]
   def change
     create_table :patrimonios do |t|
+      t.string :titulo
       t.string :descripcion
       t.string :ubicacion
       t.string :telefono
