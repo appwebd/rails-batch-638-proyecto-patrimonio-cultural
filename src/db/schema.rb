@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_08_09_232608) do
   end
 
   create_table "patrimonios", force: :cascade do |t|
+    t.string "titulo"
     t.string "descripcion"
     t.string "ubicacion"
     t.string "telefono"

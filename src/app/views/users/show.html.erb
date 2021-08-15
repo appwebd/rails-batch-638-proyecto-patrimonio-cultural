@@ -1,18 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col-7 ">
-
-        <br>
-        <h3 class="text-center">Información perfil</h3>
+<%= container_begin %>
+<%= header_page('fas fa-user', 'Perfil usuario') %>
+<%= raw_row_col_begin %>
 
 <br>
-            <table class="table">
+            <table class="table" summary="Perfil de usuario">
               <tbody>
               <tr>
                 <td>Fotografía</td>
                 <td>
-                  <%= user_mostrar_avatar(@user) %><br>
-                  <%= cl_image_tag @user.photo.key, class:"avatar-large" %>
+                  <%= user_show_avatar('avatar-large') %><br>
                 </td>
               </tr>
               <tr><td>Nombre</td><td> <%= @user.nombre %></td></tr>
@@ -36,8 +32,8 @@
       <% end %>
       &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
       <%= link_to "/", :method => :get, :title => "Ir a home " do %>
-        <em class="fas fa-home"></em> &nbsp; Ir a página de búsqueda
+        &nbsp; Ir a página de búsqueda
       <% end %>
-    </div>
-  </div>
-</div>
+
+<%= raw_row_col_end %>
+<%= container_end %>

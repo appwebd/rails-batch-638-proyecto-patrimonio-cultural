@@ -2,6 +2,8 @@ class Patrimonio < ApplicationRecord
   belongs_to :patrimonio_tipo
   geocoded_by :ubicacion
 
+  validates :titulo, presence: true, length: { minimum: 15 }
+
   validates :descripcion, presence: true
 
   validates :ubicacion, presence: true

@@ -4,7 +4,7 @@
 // Define fonts for body and headers
 $body-font: "roboto", "Helvetica", "sans-serif";
 $headers-font: "roboto", "Helvetica", "sans-serif";
-
+$text-slategray: #cecece;
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
@@ -14,3 +14,12 @@ $headers-font: "roboto", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.help-block {
+  color: #A6A6A6;
+  font-size:80%;
+}
+
+.help-block-error {
+  color: #DC355C;
+}
