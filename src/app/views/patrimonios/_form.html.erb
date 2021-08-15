@@ -4,13 +4,20 @@
 
 
   <div class="form-inputs">
-    <h3>Información de contacto</h3>
-    <span class="help-block">Esta información es sólo para nuestro registros, no será mostrada al público</span>
+    <h3 class="text-color-orange">Información de contacto</h3>
+
+    <div class="help-block">
+      <em class="far fa-question-circle"  ></em>
+    Esta información es sólo para nuestro registros, no será mostrada al público
+    </div>
+
+
+
     <hr>
     <%= f.input :telefono, placeholder: 'Número de teléfono' %>
     <%= f.input :email, placeholder: 'Email' %>
     <br/>
-    <h3>Información de Patrimonio</h3>
+    <h3 class="text-color-orange">Información de Patrimonio</h3>
     <hr>
     <%= f.input :titulo, placeholder: 'Título descriptivo de su página de patrimonio' %>
     <%= f.input :ubicacion, placeholder: 'Indique ubicación de patrimonio' %>
