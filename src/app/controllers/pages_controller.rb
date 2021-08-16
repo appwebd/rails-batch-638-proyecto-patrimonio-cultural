@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :set_user, only: %i[home politica_de_privacidad termino_de_uso contacto]
   skip_before_action :authenticate_user!, only: %i[home contacto home politica_de_privacidad termino_de_uso]
 
   def contacto
@@ -12,7 +13,6 @@ class PagesController < ApplicationController
     @ciudad = ""
     @ciudad = @results.first.city unless @results.first.nil?
 
-    @user = current_user unless current_user.nil? # Necesario para asociar registros
     @markers = @results.map do |pages|
       {
         lat: pages.latitude,
@@ -37,6 +37,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def set_user
+     @user = current_user unless current_user.nil? # Necesario para asociar registros
+  end
 
   # TODO: Revisar al preparar vista con resultados.
   def home_buscar_params
