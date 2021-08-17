@@ -12,11 +12,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-
         <li class="nav-item dropdown">
 
           <% if user_signed_in? %>
-            <span class="navbar-brand">Bienvenido <%= current_user.nombre %></span>
+            <span class="navbar-brand">Bienvenid@ <%= current_user.nombre %></span>
           <% end %>
 
           <%= user_show_avatar %>

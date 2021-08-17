@@ -1,4 +1,5 @@
-<%= simple_form_for(@patrimonio) do |f| %>
+<%= simple_form_for @patrimonio, html: {novalidate: true} do |f| %>
+
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -7,24 +8,53 @@
     <h3 class="text-color-orange">Información de contacto</h3>
 
     <div class="help-block">
-      <em class="far fa-question-circle"  ></em>
-    Esta información es sólo para nuestro registros, no será mostrada al público
+      <em class="fas fa-exclamation-circle"></em>
+    Debido a los problemas de pandemia, recomendamos que indiques tu teléfono y correo para que las personas
+      que desean visitar tu negocio, puedan coordinar previamente su visita.
     </div>
 
 
 
     <hr>
-    <%= f.input :telefono, placeholder: 'Número de teléfono' %>
-    <%= f.input :email, placeholder: 'Email' %>
+    <%= f.input :telefono,
+                required: true,
+                pattern: "56[0-9][0-9]{8}",
+                title: "EL formato para teléfono es: 569 9999 9999 sin espacios en blanco"
+    %>
+    <%= f.input :email,
+                required: true
+    %>
     <br/>
     <h3 class="text-color-orange">Información de Patrimonio</h3>
-    <hr>
-    <%= f.input :titulo, placeholder: 'Título descriptivo de su página de patrimonio' %>
-    <%= f.input :ubicacion, placeholder: 'Indique ubicación de patrimonio' %>
-    <%= f.input :descripcion, placeholder: 'Descripción patrimonio' %>
+    <div class="help-block">
+      <em class="fas fa-exclamation-circle"></em>
+      La información de patrimonio, permite describir y ubicar en el mapa de referencia su patrimonio.
+    </div>
 
-<br>
-    <p>Seleccione el tipo de patrimonio*</p>
+    <hr>
+    <%= f.input :titulo, required: true %>
+
+
+    <label string required for="patrimonio_ubicacion">Dirección <abbr title="required">*</abbr></label>
+    <input type="search"
+           id="patrimonio_ubicacion"
+           name=patrimonio[ubicacion]
+           class="form-control"
+     />
+    <div class="help-block">
+      <em class="fas fa-exclamation-circle"></em>
+      Ingrese su dirección: calle, comuna, Chile
+    </div>
+    <br/>
+
+    <label string required for=descripcion> Descripción <abbr title="required">*</abbr></label>
+    <%= f.text_area(:descripcion,
+                    required: true,
+                    class: "col")
+    %>
+
+    <br/>
+    <label string required for="patrimonio_tipo_id">Tipo de patrimonio <abbr title="required">*</abbr></label>
 
       <%= collection_radio_buttons(:patrimonio, :patrimonio_tipo_id, PatrimonioTipo.all, :id, :nombre) do |b| %>
         <div class="radio ">
@@ -33,14 +63,16 @@
           <% end %>
         </div>
       <%end %>
-<br>
-      <%= f.input :comuna_id, placeholder: 'comuna' %>
 
+
+<br/>
+<br/>
+<br/>
 
   </div>
 
   <div class=" ">
-    <%= f.button  :submit, "Guardar", class: "btn btn-primary button_rounded"%> &nbsp; &nbsp; <%= back_list_admin('', patrimonios_path, ' ') %>
+    <%= f.button  :submit, "Guardar", class: "btn btn-primary button_rounded", data: { disable_with: false } %> &nbsp; &nbsp; <%= back_list_admin('', patrimonios_path, ' ') %>
   </div>
 
 <% end %>
