@@ -28,6 +28,10 @@ module ApplicationHelper
     raw '</div></div>'
   end
 
+  def can_do(resource, action)
+    policy(resource).send(action)
+  end
+
   def can_do_show(resource, action, message)
     message if policy(resource).send(action)
   end
