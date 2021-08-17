@@ -32,6 +32,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_geocode_by_ip_address
+    @current_location_by_ip = client_ip
+    @results = Geocoder.search(@current_location_by_ip)
+  end
+
+  def get_geocode_ciudad(results)
+    @ciudad = ""
+    @ciudad = results.first.city unless results.first.nil?
+  end
+
   private
 
   def skip_pundit?

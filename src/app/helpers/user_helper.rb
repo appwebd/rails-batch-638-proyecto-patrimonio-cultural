@@ -9,5 +9,9 @@ module UserHelper
                                     id: "navbarDropdown", data: { toggle: "dropdown" },
                                     'aria-haspopup': true, 'aria-expanded': false
     end
+  rescue StandardError
+    image_tag "avatar.png", class: "#{class_avatar} dropdown-toggle",
+                            id: "navbarDropdown", data: { toggle: "dropdown" },
+                            'aria-haspopup': true, 'aria-expanded': false
   end
 end

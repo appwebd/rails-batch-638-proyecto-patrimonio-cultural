@@ -7,12 +7,10 @@ class PagesController < ApplicationController
   end
 
   def home
-    @current_location_by_ip = client_ip
-    @results = Geocoder.search(@current_location_by_ip)
+    @results = get_geocode_by_ip_address
+    @ciudad = get_geocode_ciudad(@results)
 
-    @ciudad = ""
-    @ciudad = @results.first.city unless @results.first.nil?
-
+    @user = current_user unless current_user.nil? # Necesario para asociar registros
     @markers = @results.map do |pages|
       {
         lat: pages.latitude,
@@ -39,7 +37,7 @@ class PagesController < ApplicationController
   private
 
   def set_user
-     @user = current_user unless current_user.nil? # Necesario para asociar registros
+    @user = current_user unless current_user.nil? # Necesario para asociar registros
   end
 
   # TODO: Revisar al preparar vista con resultados.
