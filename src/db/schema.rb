@@ -76,14 +76,12 @@ ActiveRecord::Schema.define(version: 2021_08_09_232608) do
     t.string "ubicacion"
     t.string "telefono"
     t.string "email"
-    t.decimal "geo_ref_latitud"
-    t.decimal "geo_ref_longitud"
+    t.float "geo_ref_latitud"
+    t.float "geo_ref_longitud"
     t.bigint "patrimonio_tipo_id", null: false
-    t.bigint "comuna_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["comuna_id"], name: "index_patrimonios_on_comuna_id"
     t.index ["patrimonio_tipo_id"], name: "index_patrimonios_on_patrimonio_tipo_id"
     t.index ["user_id"], name: "index_patrimonios_on_user_id"
   end
@@ -119,7 +117,6 @@ ActiveRecord::Schema.define(version: 2021_08_09_232608) do
   add_foreign_key "calificacions", "patrimonios"
   add_foreign_key "calificacions", "users"
   add_foreign_key "comunas", "provs"
-  add_foreign_key "patrimonios", "comunas"
   add_foreign_key "patrimonios", "patrimonio_tipos"
   add_foreign_key "patrimonios", "users"
   add_foreign_key "provs", "regions"

@@ -10,8 +10,11 @@ class UsersController < ApplicationController
 
   # POST /
   def update
-    @user.update(user_params)
-    redirect_to user(@user.id)
+    flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
+    if @user.save
+    flash[:notice] = "Se ha guardado la información correctamente"
+    redirect_to user_path
+    end
   end
 
   def show

@@ -13,5 +13,7 @@ class User < ApplicationRecord
 
   def admin?
     user.tipo_usuario.zero?
+  rescue StandardError
+    1
   end
 end

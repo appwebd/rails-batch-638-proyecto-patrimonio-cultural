@@ -1,14 +1,14 @@
 class PatrimoniosController < ApplicationController
-  before_action :set_patrimonio, only: %i[show edit update destroy]
+  skip_after_action :verify_authorized, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index]
+
+  before_action :set_patrimonio, only: %i[destroy edit show update ]
+  before_action :get_patrimonio_params, only: %i[update]
 
   # GET /patrimonios
   def index
-    @user = current_user
     @patrimonios = policy_scope(Patrimonio)
-  end
-
-  # GET /patrimonios/1
-  def show
+    @patrimonios = Patrimonio.all
   end
 
   # GET /patrimonios/new
@@ -18,26 +18,45 @@ class PatrimoniosController < ApplicationController
     authorize @patrimonio
   end
 
+  # POST /patrimonios
+  def create
+
+    @patrimonio = Patrimonio.new(get_patrimonio_params)
+    @patrimonio.user = current_user
+
+    # Se busca la latitud longitud de la ubicación entregada por el usuario
+    # TODO: Falta crear rescue or try para el control de errores.
+    #
+    @results = Geocoder.search(@patrimonio.ubicacion)
+    @markers = @results.map do |pages|
+      {
+        lat: pages.latitude,
+        lng: pages.longitude,
+      }
+    end
+
+    @patrimonio.geo_ref_latitud = @markers[0][:lat]
+    @patrimonio.geo_ref_longitud = @markers[0][:lng]
+
+    if @patrimonio.save
+      redirect_to @patrimonio, notice: 'Se ha creado Patrimonio exitosamente.'
+    else
+      render :new
+    end
+    authorize @patrimonio
+  end
+
+  # GET /patrimonios/1
+  def show
+  end
+
   # GET /patrimonios/1/edit
   def edit
   end
 
-  # POST /patrimonios
-  def create
-    @patrimonio = Patrimonio.new(patrimonio_params)
-    @patrimonio.user = current_user
-    authorize @patrimonio
-
-    if @patrimonio.save
-      redirect_to @patrimonio, notice: 'Patrimonio was successfully created.'
-    else
-      render :new
-    end
-  end
-
   # PATCH/PUT /patrimonios/1
   def update
-    if @patrimonio.update(patrimonio_params)
+    if @patrimonio.update(get_patrimonio_params)
       redirect_to @patrimonio, notice: 'Patrimonio was successfully updated.'
     else
       render :edit
@@ -47,7 +66,7 @@ class PatrimoniosController < ApplicationController
   # DELETE /patrimonios/1
   def destroy
     @patrimonio.destroy
-    redirect_to patrimonios_url, notice: 'Patrimonio was successfully destroyed.'
+    redirect_to patrimonios_path, notice: 'Patrimonio was successfully destroyed.'
   end
 
   private
@@ -60,7 +79,14 @@ class PatrimoniosController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def patrimonio_params
-    params.require(:patrimonio).permit(:name)
+  def get_patrimonio_params
+
+    params.require(:patrimonio).permit(:titulo,
+                                         :descripcion,
+                                         :ubicacion,
+                                         :telefono,
+                                         :email,
+                                         :patrimonio_tipo_id
+    )
   end
 end

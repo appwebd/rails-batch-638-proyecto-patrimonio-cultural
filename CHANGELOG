@@ -1,0 +1,133 @@
+5d9339c Mon Aug 16 17:13:09 2021 -0400 Merge pull request #53 from appwebd/fsoaresg-Aportes
+8c8f189 Mon Aug 16 16:42:59 2021 -0400 se agrega env
+e386b96 Mon Aug 16 16:24:35 2021 -0400 Se incluyen terminos de uso y politica de privacidad
+4934f9f Mon Aug 16 14:24:22 2021 -0400 Merge pull request #52 from appwebd/projaso Se corrige color
+6289300 Mon Aug 16 14:23:26 2021 -0400 Se corrige color
+89ebfd3 Sat Aug 14 22:40:53 2021 -0400 Merge pull request #51 from appwebd/projaso Se agrega color a fonts.
+52c9f36 Sat Aug 14 22:40:01 2021 -0400 Se agrega color a fonts.
+2226988 Sat Aug 14 22:25:09 2021 -0400 Merge pull request #50 from appwebd/projaso
+6a53ef4 Sat Aug 14 22:24:13 2021 -0400 Se crea vista patrimonios
+76f4fec Fri Aug 13 21:34:05 2021 -0400 Merge pull request #49 from appwebd/projaso
+854e29d Fri Aug 13 21:32:45 2021 -0400 Se elimina la ruta oferente
+91ce79c Fri Aug 13 20:57:14 2021 -0400 Merge pull request #48 from appwebd/projaso Se corrige error de registro usuarios
+1347b4d Fri Aug 13 20:56:13 2021 -0400 Se corrige error de registro usuarios
+0f8d5e3 Fri Aug 13 15:23:08 2021 -0400 Merge pull request #47 from appwebd/projaso Se integra pundit a la modificación de perfil usuario
+9d69150 Fri Aug 13 15:22:15 2021 -0400 Se integra pundit a la modificación de perfil usuario
+dfb1c46 Fri Aug 13 10:28:02 2021 -0400 Merge pull request #46 from appwebd/projaso Se ordenan estilos y corrige error devise
+dd48817 Fri Aug 13 10:26:37 2021 -0400 Se ordenan estilos y corrige error devise
+8a1bbaf Fri Aug 13 08:41:39 2021 -0400 Merge branch 'master' into projaso
+2bce84e Fri Aug 13 08:41:33 2021 -0400 Merge pull request #45 from appwebd/fsoaresg-Aportes Se agrego pundit
+2dffd8d Fri Aug 13 08:41:28 2021 -0400 Merge branch 'master' into projaso
+94838a2 Fri Aug 13 00:44:17 2021 -0400 Se agrego pundit
+9150f5f Thu Aug 12 20:36:19 2021 -0400 Merge pull request #44 from appwebd/projaso
+b9ea384 Thu Aug 12 20:35:26 2021 -0400 Se estructuran pendientes de desarrollo
+947cc5c Thu Aug 12 20:10:04 2021 -0400 Merge pull request #43 from appwebd/projaso
+aac92cd Thu Aug 12 20:09:07 2021 -0400 Se crean carpetas de estrategia / tecnología.
+50fb5f2 Thu Aug 12 19:44:22 2021 -0400 Merge pull request #42 from appwebd/projaso Se agrega vista de búsqueda de patrimonios
+c76bd80 Thu Aug 12 19:44:08 2021 -0400 Merge branch 'master' into projaso
+2ec27a0 Thu Aug 12 19:35:54 2021 -0400 Se agrega vistra de resultados de búsqueda de patrimonios.
+c1194e0 Thu Aug 12 17:25:31 2021 -0400 Merge pull request #41 from appwebd/projaso
+928c5d7 Thu Aug 12 17:25:31 2021 -0400 Merge branch 'master' into projaso
+7033386 Thu Aug 12 17:24:42 2021 -0400 Se corrige visualización popup de los puntos geocoder del mapa.
+6a714a5 Thu Aug 12 17:01:30 2021 -0400 Merge pull request #40 from appwebd/projaso
+f894f13 Thu Aug 12 16:59:21 2021 -0400 Merge branch 'master' into projaso
+fda79a1 Thu Aug 12 16:59:02 2021 -0400 Merge branch 'master' into projaso
+a6c354b Thu Aug 12 16:58:36 2021 -0400 Merge pull request #39 from appwebd/projaso
+9024b8d Thu Aug 12 16:57:48 2021 -0400 Eliminación de seed usuarios, provoca error en devise
+f6613ec Thu Aug 12 16:49:04 2021 -0400 Merge pull request #38 from appwebd/projaso
+8f4634e Thu Aug 12 16:47:14 2021 -0400 Merge branch 'master' of https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural into projaso
+7438405 Thu Aug 12 16:46:43 2021 -0400 Merge branch 'master' into projaso
+53f8c51 Thu Aug 12 16:46:20 2021 -0400 Merge pull request #37 from appwebd/projaso
+c2ff170 Thu Aug 12 16:46:08 2021 -0400 Merge branch 'master' into projaso
+0c281e5 Thu Aug 12 16:45:01 2021 -0400 Merge branch 'master' into projaso
+52a9af5 Thu Aug 12 16:42:07 2021 -0400 Merge pull request #35 from appwebd/oferente_controller cambio Controller oferente
+7d53bf3 Thu Aug 12 16:41:55 2021 -0400 Merge branch 'master' into oferente_controller
+97ca67e Thu Aug 12 16:40:55 2021 -0400 Merge pull request #36 from appwebd/projaso Creación de seed usuarios.
+51c2afc Thu Aug 12 16:20:37 2021 -0400 Creación de seed usuarios.
+da42106 Thu Aug 12 15:43:14 2021 -0400 cambio Controller oferente
+7256118 Thu Aug 12 15:01:39 2021 -0400 Merge pull request #34 from appwebd/projaso
+962b78c Thu Aug 12 15:00:51 2021 -0400 Actualización de device con columnas de usuario.
+0fe7fb7 Thu Aug 12 12:12:25 2021 -0400 Merge pull request #33 from appwebd/projaso
+a556b82 Thu Aug 12 12:10:52 2021 -0400 Se cambia estilo de la vista
+241e634 Thu Aug 12 12:03:05 2021 -0400 Merge pull request #32 from appwebd/projaso
+56608c6 Thu Aug 12 12:02:06 2021 -0400 Se agrega estilo entregado
+70da793 Thu Aug 12 11:54:44 2021 -0400 Merge pull request #31 from appwebd/fsoaresg-Aportes Se modificaron las vistas inicio de sesion y registro de usuario
+8eadb69 Thu Aug 12 11:53:10 2021 -0400 Merge branch 'master' into fsoaresg-Aportes
+73cf9bc Thu Aug 12 01:03:57 2021 -0400 Se modificaron las vistas inicio de sesion y registro de usuario para coincidir con figma
+93ba378 Wed Aug 11 22:01:32 2021 -0400 Merge pull request #30 from appwebd/projaso
+31b5719 Wed Aug 11 21:59:34 2021 -0400 Cambio de ruta para oferente
+329b9de Wed Aug 11 18:38:55 2021 -0400 Merge pull request #29 from appwebd/fsoaresg-Aportes Modificacion de la vista de registro de usuario
+c63423c Wed Aug 11 18:32:43 2021 -0400 Merge branch 'master' into fsoaresg-Aportes
+2cbd298 Wed Aug 11 18:29:45 2021 -0400 Modificacion de la vista de registro de usuario
+c4538da Wed Aug 11 16:32:23 2021 -0400 Merge pull request #28 from appwebd/projaso
+3186128 Wed Aug 11 16:20:58 2021 -0400 rails generate oferente index create view update destroy
+56ba9f4 Wed Aug 11 12:39:56 2021 -0400 Merge pull request #27 from appwebd/projaso
+b314caf Wed Aug 11 12:37:53 2021 -0400 Se agrega ciudad a buscador geocode
+c53d99d Wed Aug 11 12:24:25 2021 -0400 Actualización de README.md
+e348470 Wed Aug 11 12:19:46 2021 -0400 Se agrega geocoder
+8eab23a Tue Aug 10 17:49:01 2021 -0400 Merge pull request #26 from appwebd/projaso
+0cda766 Tue Aug 10 17:47:40 2021 -0400 algunos cambios de diseño
+a236ae4 Tue Aug 10 17:38:37 2021 -0400 Merge pull request #25 from appwebd/fsoaresg-Aportes Cambio del modelo Provincias por Prov
+3f6c163 Tue Aug 10 17:26:26 2021 -0400 Cambio del modelo Provincias por Prov
+3fe2ed4 Tue Aug 10 15:35:36 2021 -0400 Merge pull request #24 from cemirc/Claudiapatrimonio nuevos logos png
+fce34d9 Tue Aug 10 15:33:56 2021 -0400 nuevos logos png
+8ba42e0 Tue Aug 10 13:59:14 2021 -0400 Merge pull request #23 from appwebd/projaso Se agrega gema geocoder
+1325a9b Tue Aug 10 13:58:18 2021 -0400 Se agrega gema geocoder
+0e597c7 Tue Aug 10 12:02:57 2021 -0400 Merge pull request #22 from appwebd/projaso @appwebd Se general algunas vistas basadas en diseño gráfico
+d5b7f95 Tue Aug 10 11:59:06 2021 -0400 Merge branch 'master' into projaso
+1980ec9 Tue Aug 10 11:51:32 2021 -0400 Se general algunas vistas basadas en diseño gráfico
+b6319f5 Tue Aug 10 10:28:49 2021 -0400 Merge pull request #21 from appwebd/projaso
+ca8820d Tue Aug 10 10:28:02 2021 -0400 Se agrega gema pundit:policy
+e7e07dd Mon Aug 9 19:53:02 2021 -0400 Merge pull request #20 from appwebd/projaso Se agrega active_storage
+76875e9 Mon Aug 9 19:52:15 2021 -0400 Se agrega active_storage
+585e1bc Mon Aug 9 19:15:46 2021 -0400 Merge pull request #19 from appwebd/projaso Se agrega la gema de cloudinary
+28265bc Mon Aug 9 19:14:47 2021 -0400 Se agrega la gema de cloudinary
+cbd1b06 Mon Aug 9 18:36:09 2021 -0400 Merge pull request #18 from appwebd/projaso
+b7b53cc Mon Aug 9 18:32:03 2021 -0400 Actualización de tablas del proyecto.
+2992e5f Mon Aug 9 17:52:11 2021 -0400 Actualizacion de Readme.md
+42cd72e Mon Aug 9 17:04:26 2021 -0400 Merge pull request #17 from appwebd/projaso Se agrega seed Patrimonio tipo
+61dc1a9 Mon Aug 9 17:02:59 2021 -0400 Se crea seed de Patrimonio_tipo
+d6a47b1 Mon Aug 9 15:18:20 2021 -0400 Merge branch 'master' into projaso
+42561d0 Mon Aug 9 15:17:14 2021 -0400 Merge pull request #16 from appwebd/latitud-longitud
+e52b51e Mon Aug 9 12:51:57 2021 -0400 Validacion de Latitud y Longitud
+1de5dd8 Sun Aug 8 21:07:51 2021 -0400 Merge branch 'master' into projaso
+d7d6332 Sun Aug 8 21:04:07 2021 -0400 Merge pull request #15 from appwebd/projaso Se corrige enlace a imagen modelo de datos.
+582096c Sun Aug 8 21:03:16 2021 -0400 Se corrige enlace a imagen modelo de datos.
+93e3454 Sun Aug 8 20:56:46 2021 -0400 Merge pull request #14 from appwebd/projaso
+b5ed7d3 Sun Aug 8 20:32:26 2021 -0400 Merge branch 'master' into projaso
+74e816c Sun Aug 8 20:32:13 2021 -0400 Merge branch 'master' into projaso
+48d77d8 Sun Aug 8 20:19:46 2021 -0400 Merge pull request #13 from appwebd/projaso Se desarrolla seed de tablas: regions, provincias, comunas
+92df940 Sun Aug 8 20:16:36 2021 -0400 Se desarrolla seed de tablas: regions, provincias, comunas
+7090ec9 Sat Aug 7 22:56:15 2021 -0400 Merge pull request #12 from appwebd/projaso Esto para customizar las vistas y rutas
+c3c69d3 Sat Aug 7 22:55:15 2021 -0400 rails generate devise:controllers users
+a3bc054 Sat Aug 7 22:48:11 2021 -0400 Merge pull request #11 from appwebd/projaso Se elimina active-storage del proyecto
+f520a6d Sat Aug 7 22:47:19 2021 -0400 Se elimina active-storage del proyecto
+5b6e486 Sat Aug 7 22:03:40 2021 -0400 Merge pull request #10 from appwebd/projaso Se agrega public/css/style.css archivos html en public
+2f63c3d Sat Aug 7 22:02:49 2021 -0400 Se agrega public/css/style.css archivos html en public
+1217c2f Fri Aug 6 22:17:34 2021 -0400 Merge pull request #9 from appwebd/projaso Actualización de imagen.
+9e686a5 Fri Aug 6 22:12:57 2021 -0400 Actualización de imagen.
+bf3f330 Fri Aug 6 22:05:38 2021 -0400 Merge pull request #8 from appwebd/projaso
+e1bc729 Fri Aug 6 22:04:30 2021 -0400 Merge branch 'master' into projaso
+5d5e9f8 Fri Aug 6 22:04:20 2021 -0400 Merge branch 'master' into projaso
+6cfa894 Fri Aug 6 22:04:16 2021 -0400 Merge pull request #7 from appwebd/projaso rails generate model Calificacion
+9ccaf14 Fri Aug 6 22:00:46 2021 -0400 rails generate model Calificacion
+b8b1100 Fri Aug 6 21:45:00 2021 -0400 Merge pull request #6 from appwebd/projaso rails generate model Patrimonio
+2ade362 Fri Aug 6 21:43:24 2021 -0400 rails generate model Patrimonio
+cdd7dd8 Fri Aug 6 21:33:03 2021 -0400 Merge pull request #5 from appwebd/projaso rails generate model Patrimonio_tipo
+279328b Fri Aug 6 21:30:55 2021 -0400 Merge branch 'master' into projaso
+571a868 Fri Aug 6 21:30:48 2021 -0400 rails generate model Patrimonio_tipo
+f1d98e0 Fri Aug 6 21:24:31 2021 -0400 Merge branch 'master' into projaso
+d22fe75 Fri Aug 6 21:23:45 2021 -0400 Merge pull request #4 from appwebd/projaso rails generate model Comuna
+35e3b05 Fri Aug 6 21:22:03 2021 -0400 rails generate model Comuna
+7713af2 Fri Aug 6 21:09:44 2021 -0400 Merge pull request #3 from appwebd/projaso
+0e7dbe9 Fri Aug 6 21:02:48 2021 -0400 Se corrige error de migración provincias
+51250c8 Fri Aug 6 21:00:22 2021 -0400 rails db:migrate
+0b63528 Fri Aug 6 19:59:18 2021 -0400 Merge pull request #2 from appwebd/fsoaresg-Aportes
+b95ff19 Fri Aug 6 19:45:35 2021 -0400 Update README.md
+385f8b6 Fri Aug 6 22:21:07 2021 +0000 Merge pull request #1 from appwebd/projaso
+61b409d Fri Aug 6 18:18:47 2021 -0400 Se agrega referencia de imagen.
+642a26e Fri Aug 6 18:16:26 2021 -0400 Se crea modelo de datos.
+affea0f Fri Aug 6 18:05:54 2021 -0400 rails db:migrate
+5946954 Fri Aug 6 17:14:25 2021 -0400 Se actualiza README.md
+f56b740 Fri Aug 6 16:22:03 2021 -0400 Rails new
+e638065 Fri Aug 6 15:52:56 2021 -0400 Initial commit

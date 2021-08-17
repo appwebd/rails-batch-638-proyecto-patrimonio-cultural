@@ -1,39 +1,60 @@
 <%= container_begin %>
 <%= header_page('fas fa-mountain', 'Patrimonios') %>
 <%= raw_row_col_begin %>
-  <p class="text-black-50">En esta vista usted puede ingresar Patrimonios culturales que hacen de su región un lugar único.
+<p class="text-black-50">En esta vista usted puede ingresar Patrimonios culturales que hacen de su región un lugar
+  único.
   Para ingresar un nuevo patrimonio, puedes hacer clic de mouse sobre el botón <i>Nuevo patrimonio</i></p>
 <%= raw_row_col_end %>
 <%= raw_row_col_begin %>
 
-<% button_new =  can_do_show(Patrimonio, :create?, (link_to "Nuevo patrimonio", new_patrimonio_path, class:"btn btn-primary button_rounded")) %>
+<% button_new = can_do_show(Patrimonio, :create?, (link_to "Nuevo patrimonio", new_patrimonio_path, class: "btn btn-primary button_rounded")) %>
 
 <br/><br/>
-    <div class="text-right"><%= button_new %></div>
-    <table class="table card-body" summary="Detalle de Patrimonios registrados">
+<div class="text-right"><%= button_new %></div>
+<table class="table card-body" summary="Detalle de Patrimonios registrados">
 
-      <thead>
-      <tr>
-        <th scope="col">Título</th>
-        <th scope="col">Reseña</th>
-      </tr>
-      </thead>
-      <tbody>
-    <% @patrimonios.each do |patrimonio| %>
-      <tr>
-        <td class="col"><%= patrimonio.titulo %></td>
-        <td class="col"><%= patrimonio.resena %></td>
-
-        <td  class="col width50px"><%= button_show     =  can_do_show(Patrimonio, :show?,    (link_to "<em class=\"far fa-eye\"></em>", patrimonio, class:" ")) %> </td>
-        <td  class="col width50px"><%= button_edit     =  can_do_show(Patrimonio, :edit?,    (link_to "<em class=\"fas fa-pencil-alt\"></em>",    patrimonio, class:""))  %> </td>
-        <td  class="col width50px"><%= button_destroy  =  can_do_show(Patrimonio, :destroy?, (link_to "<em class=\"fas fa-trash-restore-alt\"></em>", patrimonio, method: :delete, data: { confirm: 'Are you sure?' })) %> </td>
+  <thead>
+  <tr>
+    <th scope="col">Título</th>
+    <th scope="col">Reseña</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @patrimonios.each do |patrimonio| %>
+    <tr>
+      <td class="col"><%= patrimonio.titulo %></td>
 
 
-      </tr>
-    <% end %>
-    </tbody>
+      <td class="col width10px">
+        <% if can_do(patrimonio, :show?) %>
+          <%= link_to patrimonio, class: "btn " do %>
+            <i class="fas fa-eye"></i>
+          <% end %>
+        <% end %>
+      </td>
 
-    </table>
+      <td class="col width10px">
+        <% if can_do(patrimonio, :edit?) %>
+          <%= link_to edit_patrimonio_path(patrimonio), class: "btn " do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+        <% end %>
+      </td>
+
+      <td class="col width10px">
+        <% if can_do(patrimonio, :destroy?) %>
+          <%= link_to patrimonio, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash-restore-alt"></i>
+          <% end %>
+        <% end %>
+      </td>
+
+
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
 
 <div class="text-left"><%= button_new %></div>
 
