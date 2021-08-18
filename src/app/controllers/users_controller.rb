@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  skip_after_action :verify_authorized, only: [:index]
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_after_action :verify_authorized, only: %i[:index :update]
+  skip_before_action :authenticate_user!, only: %i[:index :update]
 
   before_action :set_user, only: %i[destroy edit update show]
 
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # POST /
   def update
+    debugger
     if @user.update(get_user_params)
       redirect_to @user, notice: 'Usuario ha sido guardado correctamente.'
     else

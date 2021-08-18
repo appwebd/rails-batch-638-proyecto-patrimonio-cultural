@@ -2,14 +2,14 @@ class ApplicationController < ActionController::Base
   include Pundit
   # Prevent CSRF attacks by raising an exception. For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :resultado
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+#  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
 
   IP_ADDRESS = ENV['IP_ADDRESS_PUBLIC'] # Hard coded remote address
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
 
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^resultado)/
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
   def user_not_authorized

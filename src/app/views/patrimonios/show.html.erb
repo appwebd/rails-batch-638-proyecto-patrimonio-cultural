@@ -23,8 +23,11 @@
         <% end %>
       <% end %>
       &nbsp; &nbsp;
-      <%= link_to 'Volver a lista patrimonios', patrimonios_path %>
-
+      <% if user_signed_in? %>
+        <%= link_to 'Volver a lista patrimonios', patrimonios_path %>
+      <% else %>
+        <%= link_to 'Volver a página de búsqueda', root_path %>
+      <% end %>
     </div>
   </div>
 

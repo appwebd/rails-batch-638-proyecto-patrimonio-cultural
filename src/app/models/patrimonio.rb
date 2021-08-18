@@ -12,10 +12,10 @@ class Patrimonio < ApplicationRecord
   validates :ubicacion, presence: true
   validates :ubicacion, length: { maximum: 250 }
 
-  validates :telefono, uniqueness: true, presence: true
+  validates :telefono, uniqueness: false, presence: true
   validates :telefono, length: { maximum: 15 }
 
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: false, presence: true
   validates :email, length: { maximum: 254 }
 
 end

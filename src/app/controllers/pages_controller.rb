@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: %i[home politica_de_privacidad resultado termino_de_uso]
+  #  before_action :set_user, only: %i[home politica_de_privacidad resultado termino_de_uso]
   skip_before_action :authenticate_user!, only: %i[contacto home politica_de_privacidad resultado termino_de_uso]
 
   def contacto
