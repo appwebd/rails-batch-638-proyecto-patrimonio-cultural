@@ -44,4 +44,23 @@ module ApplicationHelper
   def small_text(message)
     raw "<span class=\"help-block\"> #{message}</span>"
   end
+
+  def imagen_random
+    if Patrimonio.count <= 2
+      id = Patrimonio.first.id
+    else
+      id = rand(Patrimonio.count) + 1
+    end
+
+    registro = Patrimonio.find(id)
+
+    if registro.photo.key.nil?
+      image_tag "default.jpg", class: "imagen_patrimonio"
+    else
+      cl_image_tag registro.photo.key, class: "imagen_patrimonio"
+    end
+
+  rescue StandardError
+    image_tag "default.jpg", class: "imagen_patrimonio"
+  end
 end

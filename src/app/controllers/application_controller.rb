@@ -45,11 +45,12 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^resultado)/
   end
 
   def user_not_authorized
-    flash[:alert] = "Usted no está autorizado a realizar esta acción"
+    flash[:alert] = "Debe registrarse para realizar esa acción"
     redirect_to(request.referrer || root_path)
   end
 end

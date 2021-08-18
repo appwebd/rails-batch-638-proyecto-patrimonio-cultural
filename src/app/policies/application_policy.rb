@@ -25,6 +25,10 @@ class ApplicationPolicy
     false
   end
 
+  def resultado?
+    true
+  end
+
   def show?
     false
   end

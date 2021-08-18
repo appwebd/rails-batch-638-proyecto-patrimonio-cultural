@@ -2,10 +2,42 @@
   <div class="row">
     <div class="col-4">
       <br>
+      <h1>A dónde vas<br>a viajar?</h1><br>
+      <br>
+      <table class="table " summary="Detalle de Patrimonios registrados">
 
+        <thead>
+        <tr>
+          <th scope="col">Título</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @patrimonios.each do |patrimonio| %>
+          <tr>
+            <td class="col"><%= patrimonio.titulo %></td>
+
+
+            <td class="col width10px">
+              <% if can_do(patrimonio, :show?) %>
+                <%= link_to patrimonio, class: "btn ", target: "_blank" do %>
+                  <i class="fas fa-eye"></i>
+                <% end %>
+              <% end %>
+            </td>
+
+          </tr>
+        <% end %>
+        </tbody>
+
+      </table>
     </div>
     <div class="col">
 
+      <div id="map"
+           class="mapStyle"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
 
     </div>
   </div>
