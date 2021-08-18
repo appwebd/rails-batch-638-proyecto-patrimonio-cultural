@@ -9,9 +9,10 @@
       <p><strong>Ven a conocernos</strong></p>
       <br>
 
-      <%= form_for :search, method: :post, url: resultado_path do |form| %>
-        <%= form.label :value, 'Buscar patrimonios por localidad' %><br/>
-        <%= form.text_field :value, placeholder: @ciudad %>
+      <%= simple_form_for :search, method: :post, url: resultado_path do |form| %>
+
+
+        <%= form.input :patrimonio_ubicacion, label: 'Buscar patrimonio por localidad', id: 'patrimonio_ubicacion', required:true, class:"form-control", type: "search" %>
 
         <%= form.submit 'Buscar', class: "btn btn-primary button_rounded" %>
       <% end %>

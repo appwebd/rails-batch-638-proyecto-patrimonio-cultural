@@ -3,7 +3,7 @@
 <%= raw_row_col_begin %>
 
 
-      <%= simple_form_for(@user) do |f| %>
+      <%= simple_form_for(@user, html: {novalidate: true}) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
@@ -42,9 +42,9 @@
                       input_html: { autocomplete: "new-password" } %>
 
           <div class="text-left">
-            <%= f.button :submit, "Actualizar", class: "btn btn-primary button_rounded" %>
+            <%= f.button :submit, "Actualizar", class: "btn btn-primary button_rounded", data: { disable_with: false } %>
             &nbsp;
-            <%= can_do_show(@user, :show?, (link_to 'Cancelar', user_path)) %>
+            <%= can_do_show(@user, :show?, (link_to 'Cancelar', user_path, class: "btn button_orange")) %>
           </div>
 
         </div>

@@ -1,11 +1,7 @@
 class PatrimonioPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(user = current_user)
-      end
+      user.admin?
     end
   end
 

@@ -1,5 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h1> <%= @patrimonio.titulo %></h1><br>
+      <p class="text-left"> <%= @patrimonio.ubicacion %></p>
+      <p class="text-justify">
+        <%= @patrimonio.descripcion %>
+      </p>
+      <h3> Información de contacto</h3><br>
+      <p class="text-left"><i class="fas fa-phone-square-alt"></i> <%= @patrimonio.telefono %></p>
+    </div>
+    <div class="col-8 d-flex justify-content-center">
+        <%= imagen_mostrar(@patrimonio.photo.key) %>
+    </div>
 
+  </div>
 
-<%= link_to 'Edit', edit_patrimonio_path(@patrimonio) %> |
-<%= link_to 'Back', patrimonios_path %>
+  <div class="row">
+    <div class="col">
+
+      <%= link_to 'Actualizar', edit_patrimonio_path(@patrimonio) %> |
+      <%= link_to 'Volver a lista patrimonios', patrimonios_path %>
+
+    </div>
+  </div>
+
+</div>

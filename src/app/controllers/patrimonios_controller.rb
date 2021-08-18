@@ -2,7 +2,7 @@ class PatrimoniosController < ApplicationController
   skip_after_action :verify_authorized, only: [:index]
   skip_before_action :authenticate_user!, only: [:index]
 
-  before_action :set_patrimonio, only: %i[destroy edit show update ]
+  before_action :set_patrimonio, only: %i[destroy edit show update]
   before_action :get_patrimonio_params, only: %i[update]
 
   # GET /patrimonios
@@ -20,18 +20,16 @@ class PatrimoniosController < ApplicationController
 
   # POST /patrimonios
   def create
-
     @patrimonio = Patrimonio.new(get_patrimonio_params)
     @patrimonio.user = current_user
 
-    # Se busca la latitud longitud de la ubicación entregada por el usuario
     # TODO: Falta crear rescue or try para el control de errores.
     #
     @results = Geocoder.search(@patrimonio.ubicacion)
     @markers = @results.map do |pages|
       {
         lat: pages.latitude,
-        lng: pages.longitude,
+        lng: pages.longitude
       }
     end
 
@@ -80,13 +78,12 @@ class PatrimoniosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def get_patrimonio_params
-
     params.require(:patrimonio).permit(:titulo,
-                                         :descripcion,
-                                         :ubicacion,
-                                         :telefono,
-                                         :email,
-                                         :patrimonio_tipo_id
-    )
+                                       :descripcion,
+                                       :ubicacion,
+                                       :telefono,
+                                       :email,
+                                       :patrimonio_tipo_id,
+                                       :photo)
   end
 end

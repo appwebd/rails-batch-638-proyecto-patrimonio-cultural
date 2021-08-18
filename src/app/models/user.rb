@@ -12,8 +12,8 @@ class User < ApplicationRecord
   validates :apellidos, presence: true
 
   def admin?
-    user.tipo_usuario.zero?
+    user.tipo_usuario != 0
   rescue StandardError
-    1
+    false
   end
 end

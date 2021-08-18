@@ -1,6 +1,12 @@
-<h1>Editing Patrimonio</h1>
+<div class="container">
+<br>
+  <div class="row">
+    <div class="col">
+      <%= image_tag "logo_footer.png", class: " titulo"  %>
+      <br/>
+      <%= small_text("Por favor, ingrese toda la información solicitada.") %>
+      <%= render 'form', patrimonio: @patrimonio %>
+    </div>
+  </div>
 
-<%= render 'form', patrimonio: @patrimonio %>
-
-<%= link_to 'Show', @patrimonio %> |
-<%= link_to 'Back', patrimonios_path %>
+</div>

@@ -10,8 +10,11 @@ class UsersController < ApplicationController
 
   # POST /
   def update
-    @user.update(user_params)
-    redirect_to user(@user.id)
+    if @user.update(get_user_params)
+      redirect_to @user, notice: 'Usuario ha sido guardado correctamente.'
+    else
+      render :edit
+    end
   end
 
   def show
@@ -35,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def user_params
+  def get_user_params
     params.require(:user).permit(:apellidos, :email, :nombre, :photo, :password, :password_confirmation)
   end
 end

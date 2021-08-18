@@ -1,6 +1,7 @@
 class Patrimonio < ApplicationRecord
   belongs_to :patrimonio_tipo
   belongs_to :user
+  has_one_attached :photo
 
   geocoded_by :ubicacion
 
@@ -17,5 +18,4 @@ class Patrimonio < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :email, length: { maximum: 254 }
 
-  # after_validation :geocode
 end

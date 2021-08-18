@@ -13,8 +13,6 @@
       que desean visitar tu negocio, puedan coordinar previamente su visita.
     </div>
 
-
-
     <hr>
     <%= f.input :telefono,
                 required: true,
@@ -34,17 +32,14 @@
     <hr>
     <%= f.input :titulo, required: true %>
 
+    <%= f.input :ubicacion, id: 'patrimonio_ubicacion', required:true, class:"form-control", type: "search" %>
 
-    <label string required for="patrimonio_ubicacion">Dirección <abbr title="required">*</abbr></label>
-    <input type="search"
-           id="patrimonio_ubicacion"
-           name=patrimonio[ubicacion]
-           class="form-control"
-     />
+
     <div class="help-block">
       <em class="fas fa-exclamation-circle"></em>
-      Ingrese su dirección: calle, comuna, Chile
+      Ingrese su dirección con el formato: calle número, comuna, provincia, Chile
     </div>
+
     <br/>
 
     <label string required for=descripcion> Descripción <abbr title="required">*</abbr></label>
@@ -64,8 +59,12 @@
         </div>
       <%end %>
 
-
 <br/>
+
+    <%= f.input :photo, as: :file,
+                label: 'Cargar imágen portada',
+                autofocus: true
+    %>
 <br/>
 <br/>
 

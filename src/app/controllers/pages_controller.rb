@@ -21,15 +21,20 @@ class PagesController < ApplicationController
   end
 
   def resultado
-    # TODO: en desarrollo pages/resultado
+    @resultados = Patrimonio.near(home_buscar_params, 10)
+    @markers = @resultados.map do |pages|
+      {
+        lat: pages.latitude,
+        lng: pages.longitude,
+        info_window: render_to_string(partial: "infowindow", locals: { pages: pages })
+      }
+    end
   end
 
-  # TODO: en desarrollo pages/política_de_privacidad
   def politica_de_privacidad
     render('politica-de-privacidad')
   end
 
-  # TODO: en desarrollo pages/termino_de_uso
   def termino_de_uso
     render('terminos-de-uso')
   end
@@ -42,6 +47,6 @@ class PagesController < ApplicationController
 
   # TODO: Revisar al preparar vista con resultados.
   def home_buscar_params
-    params.require(:localidad).permit(:localidad)
+    params.require(:search).permit(:ubicacion) unless :ubicacion.blank?
   end
 end
