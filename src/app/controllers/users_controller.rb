@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   # POST /
   def update
-    debugger
     if @user.update(get_user_params)
       redirect_to @user, notice: 'Usuario ha sido guardado correctamente.'
     else
