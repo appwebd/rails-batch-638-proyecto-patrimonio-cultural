@@ -12,7 +12,6 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(configure_sign_up_params)
-    # flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
     @user.tipo_usuario = 0
     if @user.save
       flash[:notice] = "Te has registrado correctamente!!"

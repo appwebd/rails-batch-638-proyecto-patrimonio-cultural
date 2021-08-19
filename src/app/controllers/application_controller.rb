@@ -4,14 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: :resultado
 
-  # Pundit: white-list approach.
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-
-
-#  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
-
   IP_ADDRESS = ENV['IP_ADDRESS_PUBLIC'] # Hard coded remote address
   IP_LOCALHOST_IPV4 = '127.0.0.1'
   IP_LOCALHOST_IPV6 = '::1'
@@ -45,12 +37,6 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-  end
-
-  def user_not_authorized
-    flash[:alert] = "Debe registrarse para realizar esa acción"
-    redirect_to(request.referrer || root_path)
   end
 end

@@ -8,7 +8,7 @@ class PatrimonioPolicy < ApplicationPolicy
     end
 
     def resolve
-      true #@patrimonio == @user || user.admin?
+      scope.all # true #@patrimonio == @user || user.admin?
     end
   end
 
@@ -21,7 +21,6 @@ class PatrimonioPolicy < ApplicationPolicy
   end
 
   def update?
-
     user_is_owner_or_admin?
   end
 
@@ -32,6 +31,10 @@ class PatrimonioPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    record == user #|| user.tipo_usuario == 1
+    if user.nil?
+      false
+    else
+      record.user == user || user.tipo_usuario == 1
+    end
   end
 end

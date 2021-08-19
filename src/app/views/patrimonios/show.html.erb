@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <h1> <%= @patrimonio.titulo %></h1><br>
+      <br>
+      <h1 class="text-capitalize"> <%= @patrimonio.titulo %></h1><br>
       <p class="text-left"> <%= @patrimonio.ubicacion %></p>
       <p class="text-justify">
         <%= @patrimonio.descripcion %>
@@ -9,27 +10,26 @@
       <h3> Información de contacto</h3><br>
       <p class="text-left"><i class="fas fa-phone-square-alt"></i> <%= @patrimonio.telefono %></p>
 
+      <div class="row align-bottom">
+        <div class="col">
+          <% if can_do(@patrimonio, :edit?) %>
+            <%= link_to edit_patrimonio_path(@patrimonio), class: "btn " do %>
+              <i class="fas fa-pencil-alt"></i> &nbsp; Actualizar
+            <% end %>
+          <% end %>
+          &nbsp; &nbsp;
+          <% if user_signed_in? %>
+            <%= link_to 'Volver a lista patrimonios', patrimonios_path %>
+          <% else %>
+            <%= link_to 'Volver a página de búsqueda', root_path %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
     <div class="col-8 align-middle d-flex justify-content-center">
         <%= imagen_mostrar(@patrimonio.photo.key) %>
     </div>
 
   </div>
-
-  <div class="row">
-    <div class="col">
-      <% if can_do(@patrimonio, :edit?) %>
-        <%= link_to edit_patrimonio_path(patrimonio), class: "btn " do %>
-          <i class="fas fa-pencil-alt"></i> &nbsp; Actualizar
-        <% end %>
-      <% end %>
-      &nbsp; &nbsp;
-      <% if user_signed_in? %>
-        <%= link_to 'Volver a lista patrimonios', patrimonios_path %>
-      <% else %>
-        <%= link_to 'Volver a página de búsqueda', root_path %>
-      <% end %>
-    </div>
-  </div>
-
 </div>

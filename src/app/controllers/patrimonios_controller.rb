@@ -1,5 +1,4 @@
 class PatrimoniosController < ApplicationController
-  skip_after_action :verify_authorized, only: [:index, :show]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   before_action :set_patrimonio, only: %i[destroy edit show update]
@@ -7,7 +6,6 @@ class PatrimoniosController < ApplicationController
 
   # GET /patrimonios
   def index
-    policies = policy_scope(Patrimonio)
     @patrimonios = Patrimonio.all
   end
 
@@ -73,7 +71,7 @@ class PatrimoniosController < ApplicationController
   def set_patrimonio
     @user = current_user
     @patrimonio = Patrimonio.find(params[:id])
-    authorize Patrimonio
+    authorize @patrimonio
   end
 
   # Only allow a list of trusted parameters through.

@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-  skip_after_action :verify_authorized, only: %i[:index :update]
-  skip_before_action :authenticate_user!, only: %i[:index :update]
+  skip_before_action :authenticate_user!, only: %i[:update]
 
   before_action :set_user, only: %i[destroy edit update show]
 
   def index
-    authorize @user
   end
 
   # POST /
@@ -39,6 +37,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def get_user_params
-    params.require(:user).permit(:apellidos, :email, :nombre, :photo, :password, :password_confirmation)
+    params.require(:user).permit(:apellidos, :email, :nombre, :photo)
   end
 end

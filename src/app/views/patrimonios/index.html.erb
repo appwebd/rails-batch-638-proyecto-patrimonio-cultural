@@ -27,8 +27,8 @@
   <tbody>
   <% @patrimonios.each do |patrimonio| %>
     <tr>
-      <td class="col"><%= patrimonio.titulo %></td>
-      <td class="col text-truncate"><%= patrimonio.titulo %></td>
+      <td class="col text-capitalize"><%= patrimonio.titulo %></td>
+      <td class="col text-capitalize text-truncate"><%= patrimonio.titulo %></td>
 
       <td class="col width10px">
         <% if policy(patrimonio).show? %>
