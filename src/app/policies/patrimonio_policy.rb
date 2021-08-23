@@ -8,12 +8,12 @@ class PatrimonioPolicy < ApplicationPolicy
     end
 
     def resolve
-      scope.all # true #@patrimonio == @user || user.admin?
+      user_is_owner_or_admin? #scope.all # true #@patrimonio == @user || user.admin?
     end
   end
 
   def create?
-    true
+    user.present?
   end
 
   def show?
@@ -31,10 +31,6 @@ class PatrimonioPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    if user.nil?
-      false
-    else
-      record.user == user || user.tipo_usuario == 1
-    end
+    true if record.user == user || user&.tipo_usuario == 1
   end
 end

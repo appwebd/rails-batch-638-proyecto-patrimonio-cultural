@@ -27,8 +27,26 @@
       </div>
 
     </div>
-    <div class="col-8 align-middle d-flex justify-content-center">
-        <%= imagen_mostrar(@patrimonio.photo.key) %>
+    <div class="col-8 ">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+          <%
+              @patrimonio.photos.each_with_index do |imagen, index|
+
+                active = " "
+                active = " active " if index == 0
+          %>
+              <div class="carousel-item <%= active %>">
+                <%= cl_image_tag imagen.key, class: "d-block w-100", alt: "..." %>
+              </div>
+
+            <% end %>
+
+
+        </div>
+      </div>
     </div>
 
   </div>

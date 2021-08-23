@@ -1,7 +1,7 @@
 class Patrimonio < ApplicationRecord
   belongs_to :patrimonio_tipo
   belongs_to :user
-  has_one_attached :photo
+  has_many_attached :photos
 
   geocoded_by :ubicacion
 

@@ -61,9 +61,9 @@
 
 <br/>
 
-    <%= f.input :photo, as: :file,
-                label: 'Cargar imágen portada',
-                autofocus: true
+    <%= f.input :photos, as: :file,
+                input_html: { multiple: true },
+        label: 'Cargar imágen portada'
     %>
 <br/>
 <br/>

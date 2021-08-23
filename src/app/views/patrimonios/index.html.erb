@@ -26,39 +26,39 @@
   </thead>
   <tbody>
   <% @patrimonios.each do |patrimonio| %>
-    <tr>
-      <td class="col text-capitalize"><%= patrimonio.titulo %></td>
-      <td class="col text-capitalize text-truncate"><%= patrimonio.titulo %></td>
+    <% if patrimonio.user == current_user || @user&.tipo_usuario == 1%>
+      <tr>
+        <td class="col text-capitalize"><%= patrimonio.titulo %></td>
+        <td class="col text-capitalize text-truncate"><%= patrimonio.titulo %></td>
 
-      <td class="col width10px">
-        <% if policy(patrimonio).show? %>
-          <%= link_to patrimonio, class: "btn " do %>
-            <i class="fas fa-eye"></i>
+        <td class="col width10px">
+          <% if policy(patrimonio).show? %>
+            <%= link_to patrimonio, class: "btn " do %>
+              <i class="fas fa-eye"></i>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
+        </td>
 
-      <td class="col width10px">
-        <% if policy(patrimonio).edit? %>
-          <%= link_to edit_patrimonio_path(patrimonio), class: "btn " do %>
-            <i class="fas fa-pencil-alt"></i>
+        <td class="col width10px">
+          <% if policy(patrimonio).edit? %>
+            <%= link_to edit_patrimonio_path(patrimonio), class: "btn " do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
+        </td>
 
-      <td class="col width10px">
-        <% if policy(patrimonio).destroy? %>
-          <%= link_to patrimonio, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fas fa-trash-restore-alt"></i>
+        <td class="col width10px">
+          <% if policy(patrimonio).destroy? %>
+            <%= link_to patrimonio, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash-restore-alt"></i>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
-
-
-    </tr>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
-  </tbody>
 
+  </tbody>
 </table>
 
 <div class="text-left"><%= button_new %></div>

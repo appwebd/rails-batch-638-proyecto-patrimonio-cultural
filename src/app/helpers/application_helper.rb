@@ -29,11 +29,11 @@ module ApplicationHelper
   end
 
   def can_do(resource, action)
-    policy(resource).send(action)
+    policy(resource).send(action) || @user&.tipo_usuario == 1
   end
 
   def can_do_show(resource, action, message)
-    message if policy(resource).send(action)
+    message if policy(resource).send(action) || @user&.tipo_usuario == 1
   end
 
   def back_list_admin(caption, my_route, my_class = '')

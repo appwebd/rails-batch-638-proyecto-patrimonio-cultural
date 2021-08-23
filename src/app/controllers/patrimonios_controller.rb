@@ -1,11 +1,12 @@
 class PatrimoniosController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   before_action :set_patrimonio, only: %i[destroy edit show update]
   before_action :get_patrimonio_params, only: %i[update]
 
   # GET /patrimonios
   def index
+    @user = current_user
     @patrimonios = Patrimonio.all
   end
 
@@ -53,7 +54,7 @@ class PatrimoniosController < ApplicationController
   # PATCH/PUT /patrimonios/1
   def update
     if @patrimonio.update(get_patrimonio_params)
-      redirect_to @patrimonio, notice: 'Patrimonio was successfully updated.'
+      redirect_to @patrimonio, notice: 'Patrimonio fue actualizado exitosamente.'
     else
       render :edit
     end
@@ -62,7 +63,7 @@ class PatrimoniosController < ApplicationController
   # DELETE /patrimonios/1
   def destroy
     @patrimonio.destroy
-    redirect_to patrimonios_path, notice: 'Patrimonio was successfully destroyed.'
+    redirect_to patrimonios_path, notice: 'Patrimonio fue eliminado exitosamente.'
   end
 
   private
@@ -82,6 +83,6 @@ class PatrimoniosController < ApplicationController
                                        :telefono,
                                        :email,
                                        :patrimonio_tipo_id,
-                                       :photo)
+                                       photos: [])
   end
 end

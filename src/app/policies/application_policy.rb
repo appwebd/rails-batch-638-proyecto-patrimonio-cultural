@@ -15,7 +15,7 @@ class ApplicationPolicy
     end
 
     def resolve
-      scope.all
+      scope
     end
   end
 
@@ -28,7 +28,7 @@ class ApplicationPolicy
   end
 
   def show?
-	  scope.where(:id => record.id).exists?
+    scope.where(id: record.id).exists?
   end
 
   def create?
@@ -40,7 +40,7 @@ class ApplicationPolicy
   end
 
   def update?
-    true
+    false
   end
 
   def edit?

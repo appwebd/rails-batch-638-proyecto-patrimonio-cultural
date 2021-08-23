@@ -12,7 +12,7 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(configure_sign_up_params)
-    @user.tipo_usuario = 0
+    @user.tipo_usuario = 0 # 0 es usuario regular 1: es usuario admin
     if @user.save
       flash[:notice] = "Te has registrado correctamente!!"
       sign_in(@user)
