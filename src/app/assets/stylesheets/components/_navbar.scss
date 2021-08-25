@@ -18,3 +18,24 @@
 .titulo {
   width: 280px;
 }
+
+
+@media(max-width: 992px) {
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom:0;
+    list-style: none;
+  }
+}
+
+@media(max-width: 576px) {
+  .nav {
+    display: inline-block;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom:0;
+    list-style: none;
+  }
+}

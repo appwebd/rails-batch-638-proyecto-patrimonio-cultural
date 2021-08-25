@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-sm-4 col-md-4 col-lg-4">
       <br>
       <h1 class="text-capitalize"> <%= @patrimonio.titulo %></h1><br>
       <p class="text-left"> <%= @patrimonio.ubicacion %></p>
@@ -27,26 +27,46 @@
       </div>
 
     </div>
-    <div class="col-8 ">
-
+    <div class="col-sm-8 col-md-8 col-lg-8 text-center">
+      <br/>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
 
           <%
-              @patrimonio.photos.each_with_index do |imagen, index|
+            @patrimonio.photos.each_with_index do |imagen, index|
 
-                active = " "
-                active = " active " if index == 0
+              active = " "
+              active = " active " if index == 0
           %>
-              <div class="carousel-item <%= active %>">
-                <%= cl_image_tag imagen.key, class: "d-block w-100", alt: "..." %>
-              </div>
+            <div class="carousel-item <%= active %>">
+              <%= cl_image_tag imagen.key, class: "d-block w-100", alt: "..." %>
+            </div>
 
-            <% end %>
+          <% end %>
 
 
         </div>
       </div>
+
+
+      <div class="d-inline-block text-sm-center text-md-center text-lg-center">
+
+        <%
+          @patrimonio.photos.each_with_index do |imagen, index|
+
+            active = " "
+            active = " active " if index == 0
+        %>
+
+            <%= cl_image_tag imagen.key, class: "img-thumbnail-patrimonios", alt: "..." %>
+
+
+        <% end %>
+
+
+      </div>
+
+
     </div>
 
   </div>

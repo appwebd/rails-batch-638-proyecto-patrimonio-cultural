@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def header_page(icon, title)
     raw "<div class='row'>
-             <div class='col'>
+             <div class='col-sm-12 col-md-12 col-lg-12'>
                 <h2><em class=\"#{icon}\"></em> &nbsp; #{title}</h2>
                 <hr>
              </div>
@@ -17,11 +17,11 @@ module ApplicationHelper
   end
 
   def raw_row_col_begin
-    raw '<div class="row"><div class="col">'
+    raw '<div class="row"><div class="col-sm-12 col-md-12 col-lg-12">'
   end
 
   def raw_row_col_begin_card
-    raw '<div class="row"><div class="col patrimonial_card">'
+    raw '<div class="row"><div class="col-sm-12 col-md-12 col-lg-12 patrimonial_card">'
   end
 
   def raw_row_col_end

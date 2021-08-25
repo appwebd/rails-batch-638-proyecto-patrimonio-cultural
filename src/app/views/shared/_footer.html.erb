@@ -1,16 +1,14 @@
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-1 border-top">
-  <ul class="nav  justify-content-begin">
+<footer class="d-flex flex-wrap justify-content-between py-3 my-1 border-top">
+  <ul class="nav flex-column">
     <%= link_to "Terminos de uso", '/terminos-de-uso', class: "nav-link px-2 text-muted" %>
     <%= link_to "Política de privacidad", '/politica-de-privacidad', class: "nav-link px-2 text-muted" %>
     <%#= link_to "Contacto", '/contacto', class: "nav-link px-2 text-muted" %>
     <%= link_to "Regístrate", new_user_session_path, class: "nav-link px-2 text-muted" %>
     <%= link_to "Todos los derechos reservados", '#', class: "nav-link px-2 text-muted" %>
-
   </ul>
-  <p class="nav-link px-2 text-muted navbar-brand">
-    <%= link_to "/", class: "navbar-brand" do %>
+  <div class="nav-link px-2 text-muted navbar-brand footer-item flex-column">
+    <%= link_to "/", class: "navbar-brand " do %>
       <%= image_tag "logo_footer.png", class: "logo" %>
-
     <% end %>
-  </p>
+  </div>
 </footer>
