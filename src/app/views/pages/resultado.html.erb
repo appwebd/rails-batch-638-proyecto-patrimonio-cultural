@@ -4,26 +4,31 @@
       <br>
       <h1>A dónde vas <br class="mobile-br"> a viajar?</h1><br>
       <br>
+      <%
+        if !@patrimonio.nil?
 
-      <% @patrimonios.each do |patrimonio| %>
+           @patrimonio.each do |patrimonio| %>
 
-        <div class="row">
-          <div class="col">
-            <%= link_to patrimonio,
-                        class: "btn button_orange col",
-                        title: patrimonio.titulo,
-                        target: "_blank" do
-            %>
-              <span class="col text-truncate">
-                    <%= patrimonio.titulo[0..34] %>
-                    <% if patrimonio.titulo.length > 34 %>
-                      ...
-                    <% end %>
-              </span>
-            <% end %>
+          <div class="row">
+            <div class="col">
+              <%= link_to patrimonio,
+                          class: "btn button_orange col",
+                          title: patrimonio.titulo,
+                          target: "_blank" do
+              %>
+                <span class="col text-truncate">
+                      <%= patrimonio.titulo[0..34] %>
+                  <% if patrimonio.titulo.length > 34 %>
+                        ...
+                      <% end %>
+                </span>
+              <% end %>
+            </div>
           </div>
-        </div>
 
+        <% end
+           else %>
+          <p class="text-justify">No se encontró información para:<br><%= @params[:ubicacion] %></p>
       <% end %>
 
     </div>

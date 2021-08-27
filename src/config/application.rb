@@ -23,6 +23,8 @@ module RailsBatch638ProyectoPatrimonioCultural
     # in config/environments, which are processed later.
     #
     config.time_zone = "America/Santiago"
+    config.i18n.default_locale = :es
+    config.exceptions_app = self.routes
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

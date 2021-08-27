@@ -22,15 +22,24 @@ class PagesController < ApplicationController
   end
 
   def resultado
-    # patrimonio = params[:patrimonio]
+    @params = home_buscar_params
 
-    @patrimonios = Patrimonio.all #near(patrimonio[:ubicacion], 10) #Patrimonio.near(home_buscar_params, 10)
-    @markers = @patrimonios.map do |pages|
+    if @params[:ubicacion].nil?
+      @patrimonio = Patrimonio.all
+    else
+      @patrimonio = Patrimonio.near(@params[:ubicacion], 60)
+    end
+
+    @markers = @patrimonio.geocoded.map do |pages|
       {
-        lat: pages.geo_ref_latitud,
-        lng: pages.geo_ref_longitud,
+        lat: pages.latitude,
+        lng: pages.longitude,
         info_window: render_to_string(partial: "inforesultado", locals: { pages: pages })
       }
+    end
+
+    if @markers.length == 0
+      redirect_to root_path, notice: "No se encontraron registros para la ubicación: #{@params[:ubicacion]}"
     end
   end
 
@@ -48,7 +57,6 @@ class PagesController < ApplicationController
     @user = current_user unless current_user.nil? # Necesario para asociar registros
   end
 
-  # TODO: Revisar al preparar vista con resultados.
   def home_buscar_params
     params.require(:patrimonio).permit(:ubicacion)
   end

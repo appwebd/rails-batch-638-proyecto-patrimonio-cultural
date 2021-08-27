@@ -16,13 +16,13 @@ class Users::PasswordsController < Devise::PasswordsController
 
   # GET /resource/password/edit?reset_password_token=abcdef
   def edit
-     super
+    super
   end
 
   # PUT /resource/password
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # protected
 
@@ -35,6 +35,7 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super(resource_name)
   # end
   private
+
   def remove_session
     sign_out resource if user_signed_in?
   end

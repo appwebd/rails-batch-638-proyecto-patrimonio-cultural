@@ -22,8 +22,6 @@ class PatrimoniosController < ApplicationController
     @patrimonio = Patrimonio.new(get_patrimonio_params)
     @patrimonio.user = current_user
 
-    # TODO: Falta crear rescue or try para el control de errores.
-    #
     @results = Geocoder.search(@patrimonio.ubicacion)
     @markers = @results.map do |pages|
       {
@@ -32,8 +30,8 @@ class PatrimoniosController < ApplicationController
       }
     end
 
-    @patrimonio.geo_ref_latitud = @markers[0][:lat]
-    @patrimonio.geo_ref_longitud = @markers[0][:lng]
+    @patrimonio.latitude = @markers[0][:lat]
+    @patrimonio.longitude = @markers[0][:lng]
 
     if @patrimonio.save
       redirect_to @patrimonio, notice: 'Se ha creado Patrimonio exitosamente.'

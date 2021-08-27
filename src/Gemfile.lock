@@ -92,6 +92,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.0)
+      devise (>= 4.8.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -263,6 +265,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   cloudinary (~> 1.20)
   devise (~> 4.8)
+  devise-i18n (~> 1.10)
   dotenv-rails
   font-awesome-sass (~> 5.15, >= 5.15.1)
   geocoder (~> 1.6, >= 1.6.7)

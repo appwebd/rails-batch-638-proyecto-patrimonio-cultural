@@ -17,9 +17,11 @@
     <%= f.input :telefono,
                 required: true,
                 pattern: "56[0-9][0-9]{8}",
+                value: @user.try(:telefono),
                 title: "EL formato para teléfono es: 569 9999 9999 sin espacios en blanco"
     %>
     <%= f.input :email,
+                value: @user.try(:email),
                 required: true
     %>
     <br/>
@@ -45,7 +47,8 @@
     <label string required for=descripcion> Descripción <abbr title="required">*</abbr></label>
     <%= f.text_area(:descripcion,
                     required: true,
-                    class: "col")
+                    rows: 6,
+                    class: " form-control textarea ")
     %>
 
     <br/>
