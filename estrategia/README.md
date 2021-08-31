@@ -3,7 +3,7 @@
 Se ha desarrollado la visión general de la experiencia de usuario (UX),  e interfaz usuario (UI) a través del desarrollo de la Persona UX y el User Journey
 que se muestra en las siguientes imágenes.
 
-### Página Principal
+### Página principal
 
 ![Página principal](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/estrategia/images/01-pagina-principal.png?raw=true)
 
@@ -13,7 +13,7 @@ que se muestra en las siguientes imágenes.
 ### Mostrar patrimonio
 ![Mostrar patrimonio](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/estrategia/images/03-mostrar.png?raw=true)
 
-### Perfil Usuario
+### Perfil usuario
 ![Perfil usuario](https://github.com/appwebd/rails-batch-638-proyecto-patrimonio-cultural/blob/master/estrategia/images/04-perfil-usuario.png?raw=true)
 
 ### Actualizar perfil de usuario
