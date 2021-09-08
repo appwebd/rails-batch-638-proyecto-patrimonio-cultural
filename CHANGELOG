@@ -1,3 +1,18 @@
+2fec04b Tue Aug 31 17:46:10 2021 -0400 Se agrega descripción de la interfaz usuario
+1bccfbd Thu Aug 26 20:26:21 2021 -0400 Se agrega i18n español
+f225b14 Wed Aug 25 17:35:38 2021 -0400 Se agrega css respponsive
+44c27d6 Mon Aug 23 19:39:35 2021 -0400 Se actualiza la subida de imágenes
+e2e69d7 Wed Aug 18 20:42:26 2021 -0400 Se corrige problemas de pundit
+91f6c43 Wed Aug 18 17:06:52 2021 -0400 Se elimina debugger
+fef537d Wed Aug 18 16:52:59 2021 -0400 Revisión permisos pundit página de búsqueda home
+4931b77 Wed Aug 18 13:52:34 2021 -0400 Se implementa busqueda de patrimonios por localidad
+cc53252 Tue Aug 17 20:34:10 2021 -0400 Se corrigen errores de algunas vistas
+9067b0a Tue Aug 17 15:07:19 2021 -0400 Merge pull request #56 from appwebd/projaso
+b4b0148 Tue Aug 17 15:06:21 2021 -0400 Se corrige index patrimonios
+447c7c8 Mon Aug 16 22:51:25 2021 -0400 Merge pull request #55 from appwebd/projaso
+e211a6b Mon Aug 16 22:50:32 2021 -0400 Se agrega CHANGELOG
+dbac53f Mon Aug 16 22:48:51 2021 -0400 Merge pull request #54 from appwebd/projaso Se agrega creación de Patrimonios.
+e58334d Mon Aug 16 22:46:39 2021 -0400 Se agrega creación de Patrimonios.
 5d9339c Mon Aug 16 17:13:09 2021 -0400 Merge pull request #53 from appwebd/fsoaresg-Aportes
 8c8f189 Mon Aug 16 16:42:59 2021 -0400 se agrega env
 e386b96 Mon Aug 16 16:24:35 2021 -0400 Se incluyen terminos de uso y politica de privacidad

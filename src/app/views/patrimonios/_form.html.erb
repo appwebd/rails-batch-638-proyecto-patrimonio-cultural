@@ -13,15 +13,15 @@
       que desean visitar tu negocio, puedan coordinar previamente su visita.
     </div>
 
-
-
     <hr>
     <%= f.input :telefono,
                 required: true,
                 pattern: "56[0-9][0-9]{8}",
+                value: @user.try(:telefono),
                 title: "EL formato para teléfono es: 569 9999 9999 sin espacios en blanco"
     %>
     <%= f.input :email,
+                value: @user.try(:email),
                 required: true
     %>
     <br/>
@@ -34,23 +34,21 @@
     <hr>
     <%= f.input :titulo, required: true %>
 
+    <%= f.input :ubicacion, id: 'patrimonio_ubicacion', required:true, class:"form-control", type: "search" %>
 
-    <label string required for="patrimonio_ubicacion">Dirección <abbr title="required">*</abbr></label>
-    <input type="search"
-           id="patrimonio_ubicacion"
-           name=patrimonio[ubicacion]
-           class="form-control"
-     />
+
     <div class="help-block">
       <em class="fas fa-exclamation-circle"></em>
-      Ingrese su dirección: calle, comuna, Chile
+      Ingrese su dirección con el formato: calle número, comuna, provincia, Chile
     </div>
+
     <br/>
 
     <label string required for=descripcion> Descripción <abbr title="required">*</abbr></label>
     <%= f.text_area(:descripcion,
                     required: true,
-                    class: "col")
+                    rows: 6,
+                    class: " form-control textarea ")
     %>
 
     <br/>
@@ -64,8 +62,12 @@
         </div>
       <%end %>
 
-
 <br/>
+
+    <%= f.input :photos, as: :file,
+                input_html: { multiple: true },
+        label: 'Cargar imágen portada'
+    %>
 <br/>
 <br/>
 

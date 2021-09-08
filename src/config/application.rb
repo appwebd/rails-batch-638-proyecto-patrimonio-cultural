@@ -15,6 +15,7 @@ module RailsBatch638ProyectoPatrimonioCultural
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.assets.initialize_on_precompile = false
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -22,6 +23,8 @@ module RailsBatch638ProyectoPatrimonioCultural
     # in config/environments, which are processed later.
     #
     config.time_zone = "America/Santiago"
+    config.i18n.default_locale = :es
+    config.exceptions_app = self.routes
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

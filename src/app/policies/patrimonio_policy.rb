@@ -1,16 +1,19 @@
 class PatrimonioPolicy < ApplicationPolicy
+  attr_reader :user, :patrimonio
+
   class Scope < Scope
+    def initialize(user, patrimonio)
+      @user = user
+      @patrimonio = patrimonio
+    end
+
     def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(user = current_user)
-      end
+      user_is_owner_or_admin? #scope.all # true #@patrimonio == @user || user.admin?
     end
   end
 
   def create?
-    true
+    user.present?
   end
 
   def show?
@@ -28,6 +31,6 @@ class PatrimonioPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    record == user || user.admin?
+    true if record.user == user || user&.tipo_usuario == 1
   end
 end

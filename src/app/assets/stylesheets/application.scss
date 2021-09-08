@@ -2,7 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-@import "config/shared";
+
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -25,7 +25,7 @@ body {
 }
 
 .mapStyle {
-  width:100%;
+  width: 100%;
   height: 600px;
 }
 
@@ -34,11 +34,8 @@ body {
 }
 
 .patrimonial_card {
-
   border-radius: 46px;
   background: #F1F1F1;
-  margin:30px;
-  padding:10px;
 }
 
 .form-inputs {
@@ -56,4 +53,26 @@ body {
   margin: 5px 200px;
   display: flex;
   text-align: center
+}
+
+.imagen_patrimonio {
+  width: 90%;
+}
+
+@media(max-width: 992px) {
+  .desktop-br {
+    display: inline;
+  }
+  .mobile-br {
+    display: none;
+  }
+}
+
+@media(max-width: 576px) {
+  .desktop-br {
+    display: inline;
+  }
+  .mobile-br {
+    display: none;
+  }
 }

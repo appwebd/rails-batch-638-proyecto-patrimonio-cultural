@@ -1,9 +1,16 @@
-<%= container_begin %>
-  <%= header_page('fas fa-mountain', 'Patrimonio nuevo') %>
+<div class="container">
+  <br/>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <%= image_tag "logo_footer.png", class: " titulo"  %>
+    </div>
+  </div>
+
   <%= small_text("Por favor, ingrese toda la información solicitada.") %>
+
   <br/><br/>
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-12 col-lg-12">
 
       <%= render 'form', patrimonio: @patrimonio %>
 
@@ -11,4 +18,4 @@
   </div>
 
 
-<%= container_end %>
+</div>
