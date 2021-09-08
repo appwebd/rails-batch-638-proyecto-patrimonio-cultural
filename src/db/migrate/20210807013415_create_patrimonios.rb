@@ -6,8 +6,8 @@ class CreatePatrimonios < ActiveRecord::Migration[6.1]
       t.string :ubicacion
       t.string :telefono
       t.string :email
-      t.float :geo_ref_latitud
-      t.float :geo_ref_longitud
+      t.float :latitude
+      t.float :longitude
 
       t.references :patrimonio_tipo, null:false, foreign_key: true
       t.references :user, null:false, foreign_key: true

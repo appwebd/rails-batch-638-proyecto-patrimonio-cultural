@@ -1,7 +1,7 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-4 patrimonial_card">
+    <div class="col-sm-4 patrimonial_card">
       <br>
       <br>
           <h3 class="text-center">Inicio de sesión</h3>
@@ -21,7 +21,7 @@
 
 
             <div class="text-center">
-              <%= f.button :submit, "   Inicio   ", class: "btn btn-primary btn  button_rounded" %>
+              <%= f.button :submit, "   Inicio   ", class: "btn btn-primary button_rounded" %>
               <br/>
               <br/>
               <%= render "devise/shared/links" %>
@@ -33,10 +33,10 @@
 
 
     </div>
-    <div class="col">
+    <div class="col-sm-8">
       <br>
       <br>
-      seleccionar una imagen randomicamente
+      <%= imagen_random %>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
   <div class="container">
     <div class="row">
-      <div class="col-4 patrimonial_card">
+      <div class="col-sm-4 col-md-4 col-lg-4 patrimonial_card">
         <br>        
           <h3 class="text-center">Registro de usuario</h3>
 
@@ -31,20 +31,18 @@
                         label: 'Confirme su contraseña',
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-          </div>
-
-          <div class="form-actions">
+            <br/>
             <%= f.button :submit, "Registrarse", class: "btn btn-primary button_rounded" %>
           </div>
-          <br>
+
 
         <% end %>
 
     </div>
-    <div class="col">
+    <div class="col-sm-8 col-md-8 col-lg-8">
       <br>
       <br>
-        imagen randómica
+        <%= imagen_random %>
     </div>
   </div>
 </div>

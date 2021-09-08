@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < ::Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -12,7 +12,7 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(configure_sign_up_params)
-    # flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
+    @user.tipo_usuario = 0 # 0 es usuario regular 1: es usuario admin
     if @user.save
       flash[:notice] = "Te has registrado correctamente!!"
       sign_in(@user)
@@ -22,19 +22,22 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    raw, enc = Devise.token_generator.generate(User, :reset_password_token)
+    @user.reset_password_token = enc
+    @user.reset_password_sent_at = Time.now.utc
+    super
+  end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -55,9 +58,9 @@ class Users::RegistrationsController < ::Devise::RegistrationsController
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
