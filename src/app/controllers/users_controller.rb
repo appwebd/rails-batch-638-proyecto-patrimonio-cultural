@@ -8,10 +8,17 @@ class UsersController < ApplicationController
 
   # POST /
   def update
+<<<<<<< HEAD
+    flash[:notice] = @user.errors.full_messages.to_sentence unless @user.save
+    if @user.save
+    flash[:notice] = "Se ha guardado la información correctamente"
+    redirect_to user_path
+=======
     if @user.update(get_user_params)
       redirect_to @user, notice: 'Usuario ha sido guardado correctamente.'
     else
       render :edit
+>>>>>>> 7b99b6d1d3d716f95e57a6a800cdb04e2d4ffc1a
     end
   end
 
