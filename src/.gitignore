@@ -44,4 +44,3 @@ yarn-debug.log*
 .DS_Store
 .scannerwork/*
 run-sonarqube-analysis.sh
-Gemfile.lock
