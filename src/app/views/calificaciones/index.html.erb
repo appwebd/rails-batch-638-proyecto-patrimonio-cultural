@@ -1,0 +1,143 @@
+<script type="text/javascript" src="/js/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.raty.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Reseñas <%= @patrimonio.titulo %></h1>
+      <%= @patrimonio.ubicacion %>
+      <br/><br/>
+      <div class="help-block">
+        <em class="fas fa-exclamation-circle"></em>
+        Las reseñas son públicas y se pueden editar.
+        Todo el mundo podrá ver tu nombre y la imagen de tu cuenta en esta plataforma.
+        Las personas que están relacionadas al Patrimonio que has visitado,
+        se alegrarán de escuchar mensajes positivos de su negocio, como también saber los aspectos en donde
+        pueden mejorar.
+      </div>
+
+      <!-- Button trigger modal -->
+      <br/><br/>
+
+      <% if user_signed_in? %>
+        <button type="button" class="btn btn-primary button_rounded" data-toggle="modal" data-target="#newResenaModal">
+          Agregar reseña
+        </button>
+        &nbsp; <%= back_list_admin('Regresar a página inicio', root_path, ' ') %>
+      <% else %>
+        <div class="d-inline-block text-right">
+          <%= link_to "Para publicar una reseña debes estar registrado",
+                      new_user_registration_path,
+                      class: " " %>
+          |
+          <%= back_list_admin('Regresar a página inicio', root_path, ' ') %>
+        </div>
+      <% end %>
+
+
+      <br/><br/>
+
+
+      <!-- Modal Nuevo registro -->
+      <div class="modal fade " id="newResenaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-color-orange" id="exampleModalLabel">Agregar reseña</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <% if user_signed_in? %>
+                <%= render 'form_new', calificacion: @calificacion, patrimonio_id: @patrimonio_id %>
+              <% end %>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary button_rounded" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade " id="edit-modal-window" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      </div>
+
+
+      <% @calificaciones.each do |calificacion| %>
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-1 text-center">
+            <%= show_avatar(calificacion.user_id) %>
+          </div>
+
+          <div class="col-sm-10 col-md-10 col-lg-10">
+
+            <%= User.get_nombre_apellidos(calificacion.user_id) %><br>
+
+            <div class="help-block">
+              <%= ranking_star_show(calificacion.ranking.to_i) %>
+              &nbsp;&nbsp;
+              <%= date_to_words(calificacion.fecha) %>
+            </div>
+
+            <p class="text-justify">
+              <%= calificacion.descripcion %>
+            </p>
+          </div>
+
+          <% if user_signed_in? %>
+            <div class="col-sm-1">
+              <div class="dropdown">
+
+                <a href="#" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <em class="fas fa-ellipsis-v"></em>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                  <button class="dropdown-item" type="button">
+
+                  </button>
+                  <button class="dropdown-item" type="button">
+                    <% if policy(calificacion).destroy? %>
+                      <%= link_to calificacione_path(calificacion.id), method: :delete, data: { confirm: 'Está usted seguro?' } do %>
+                        <em class="fas fa-trash-restore-alt"></em> &nbsp; Eliminar reseña
+                      <% end %>
+                    <% end %>
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+          <% end %>
+        </div>
+
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $('#ranking_stars').raty(
+        {
+            target: '#hint',
+            targetKeep: true,
+            targetScore: '#calificacion_ranking'
+        }
+    );
+
+    function selectItem(id, descripcion, patrimonio_id, ranking) {
+
+        console.log("Jelou estoy realizando esta validación.");
+        console.log(id);
+        console.log(descripcion);
+        console.log(patrimonio_id);
+        console.log(ranking);
+    }
+</script>

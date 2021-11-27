@@ -4,13 +4,42 @@
       <br>
       <h1 class="text-capitalize"> <%= @patrimonio.titulo %></h1><br>
       <p class="text-left"> <%= @patrimonio.ubicacion %></p>
+
       <p class="text-justify">
         <%= @patrimonio.descripcion %>
       </p>
-      <h3> Información de contacto</h3><br>
+
+      <br/>
+
+
+      <div class="row">
+        <div class="col">
+          <%= link_to calificaciones_path(patrimonio_id: @patrimonio.id),
+                      class: "btn button_orange col",
+                      title: "Reseña",
+                      target: "_blank" do
+          %>
+            Reseñas
+          <% end %>
+        </div>
+        <div class="col">
+          <% @rating = Calificacion.get_rating_media(@patrimonio.id) %>
+          <%= ranking_star_show(@rating.to_i) %>
+        </div>
+      </div>
+
+
+      <br/>
+      <br/>
+
+      <h4> Información de contacto</h4><br>
       <p class="offset-2">
-        <em class="fas fa-phone-alt"></em>&nbsp; &nbsp; <%= @patrimonio.telefono %> <br/>
-        <em class="far fa-envelope" ></em> &nbsp; &nbsp;  <%= @patrimonio.email %>
+        <% if @patrimonio.telefono.length > 0 %>
+          <em class="fas fa-phone-alt"></em>&nbsp; &nbsp; <%= @patrimonio.telefono %> <br/>
+        <% end %>
+        <% if @patrimonio.email.length > 0 %>
+          <em class="far fa-envelope"></em> &nbsp; &nbsp;  <%= @patrimonio.email %>
+        <% end %>
       </p>
 
       <br/>
@@ -80,7 +109,7 @@
             active = " active " if index == 0
         %>
 
-            <%= cl_image_tag imagen.key, class: "img-thumbnail-patrimonios", alt: "..." %>
+          <%= cl_image_tag imagen.key, class: "img-thumbnail-patrimonios", alt: "..." %>
 
 
         <% end %>

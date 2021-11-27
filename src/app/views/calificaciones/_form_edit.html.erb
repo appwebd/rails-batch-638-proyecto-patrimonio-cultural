@@ -1,0 +1,47 @@
+<script type="text/javascript" src="/js/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.raty.js"></script>
+
+<%= simple_form_for @calificacion, url: calificacione_path(id:@calificacion.id), html: { novalidate: true } do |f| %>
+
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+
+    <div class="help-block">
+
+      <em class="fas fa-exclamation-circle"></em>
+      Las reseñas son públicas y se pueden editar.
+      Todo el mundo podrá ver tu nombre y la imagen de tu cuenta en esta plataforma.
+      Las personas que están relacionadas al Patrimonio que has visitado,
+      se alegrarán de escuchar mensajes positivos de su negocio, como también saber los aspectos en donde
+      pueden mejorar.
+    </div>
+    <hr>
+    <%= f.text_area(:descripcion,
+                    required: true,
+                    placeholder: "Cuenta a los demás qué opinas del patrimonio visitado, ¿ Lo recomendarías ? ¿ por qué ?",
+                    rows: 3,
+                    class: " form-control textarea ")
+    %>
+    <div class="help-block">Las reseñas más útiles tienen al menos 100 palabras</div>
+    <br/>
+
+    <label>Calificación &nbsp; <abbr title="Valoración obligatoria">*</abbr></label>
+    <div id="ranking_stars"></div>
+    <div id="hint"></div>
+    <input type=hidden id="calificacion_ranking" name="calificacion[ranking]" required>
+    <input type=hidden id=patrimonio_id" name="calificacion[patrimonio_id]" required value="<%= @patrimonio_id %>">
+  </div>
+
+
+
+  <br/>
+  <br/>
+  <div class=" actions ">
+    <%= f.button :submit, "Guardar cambios", class: "btn btn-primary button_rounded", data: { disable_with: false } %>
+  </div>
+
+<% end %>
+
+

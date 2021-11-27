@@ -17,12 +17,13 @@
     <%= f.input :telefono,
                 required: true,
                 pattern: "56[0-9][0-9]{8}",
-                value: @user.try(:telefono),
+                hint: "EL formato para teléfono es: 569 9999 9999 sin espacios en blanco",
                 title: "EL formato para teléfono es: 569 9999 9999 sin espacios en blanco"
     %>
+
     <%= f.input :email,
-                value: @user.try(:email),
-                required: true
+                hint: "Ingrese un correo con un dominio válido (Es opcional el ingreso de correo)",
+                input_html: { value: "#{@user.try(:email)}" }
     %>
     <br/>
     <h3 class="text-color-orange">Información de Patrimonio</h3>
