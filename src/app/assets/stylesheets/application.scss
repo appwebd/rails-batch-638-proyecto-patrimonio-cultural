@@ -3,7 +3,6 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
@@ -36,23 +35,6 @@ body {
 .patrimonial_card {
   border-radius: 46px;
   background: #F1F1F1;
-}
-
-.form-inputs {
-  width: 80%;
-  border-radius: 46px;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  margin: 5px 40px
-}
-
-.form-actions {
-  height: 73px;
-  align-items: center;
-  margin: 5px 200px;
-  display: flex;
-  text-align: center
 }
 
 .imagen_patrimonio {

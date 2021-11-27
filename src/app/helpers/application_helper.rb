@@ -60,7 +60,7 @@ module ApplicationHelper
       cl_image_tag registro.photo.key, class: "imagen_patrimonio"
     end
 
-  rescue StandardError
-    image_tag "default.jpg", class: "imagen_patrimonio"
+    rescue StandardError
+      image_tag "default.jpg", class: "imagen_patrimonio"
   end
 end

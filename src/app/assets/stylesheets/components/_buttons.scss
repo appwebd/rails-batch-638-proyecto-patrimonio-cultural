@@ -6,6 +6,26 @@
   transition: background 0.3s ease;
 }
 
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
+
 .btn-cancel {
   color: white;
   padding: 8px 24px;
@@ -13,6 +33,7 @@
   background: #6a757e;
   transition: background 0.3s ease;
 }
+
 .button_rounded {
   border-radius: 30px;
   margin:5px;
