@@ -15,7 +15,7 @@ class Patrimonio < ApplicationRecord
   validates :telefono, uniqueness: false, presence: true
   validates :telefono, length: { maximum: 15 }
 
-  validates :email, uniqueness: false, presence: true
+  validates :email, uniqueness: false
   validates :email, length: { maximum: 254 }
 
 end
