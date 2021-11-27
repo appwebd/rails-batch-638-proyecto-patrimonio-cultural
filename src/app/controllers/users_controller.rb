@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # Muestra vista app/views/users/edit.html.erb
+    # Muestra vista app/views/users/_edit.html.erb
   end
 
   def destroy

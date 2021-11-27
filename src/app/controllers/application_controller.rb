@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   # devise authorization
   # For additional fields in app/views/devise/registrations/new.html.erb
-  # For additional in app/views/devise/registrations/edit.html.erb
+  # For additional in app/views/devise/registrations/_edit.html.erb
   def configure_permitted_parameters
     update_attrs = %i[password password_confirmation current_password]
     devise_parameter_sanitizer.permit :account_update, keys: update_attrs
